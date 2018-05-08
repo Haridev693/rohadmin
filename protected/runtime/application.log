@@ -1,0 +1,1222 @@
+2018/02/14 06:33:25 [error] [exception.CDbException] CDbException: CDbConnection failed to open the DB connection: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO) in /home/u356701783/public_html/backend/common/libraries/yii/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /home/u356701783/public_html/backend/common/libraries/yii/framework/db/CDbConnection.php(330): CDbConnection->open()
+#1 /home/u356701783/public_html/backend/common/libraries/yii/framework/db/CDbConnection.php(308): CDbConnection->setActive(true)
+#2 /home/u356701783/public_html/backend/common/libraries/yii/framework/base/CModule.php(387): CDbConnection->init()
+#3 /home/u356701783/public_html/backend/common/libraries/yii/framework/base/CApplication.php(450): CModule->getComponent('db')
+#4 /home/u356701783/public_html/backend/common/libraries/yii/framework/db/ar/CActiveRecord.php(634): CApplication->getDb()
+#5 /home/u356701783/public_html/backend/common/libraries/yii/framework/db/ar/CActiveRecord.php(1428): CActiveRecord->getDbConnection()
+#6 /home/u356701783/public_html/backend/common/libraries/yii/framework/db/ar/CActiveRecord.php(1517): CActiveRecord->getTableAlias(true)
+#7 /home/u356701783/public_html/backend/protected/components/UserIdentity.php(22): CActiveRecord->findByAttributes(Array)
+#8 /home/u356701783/public_html/backend/protected/models/LoginForm.php(52): UserIdentity->authenticate()
+#9 /home/u356701783/public_html/backend/common/libraries/yii/framework/validators/CInlineValidator.php(42): LoginForm->authenticate('password', Array)
+#10 /home/u356701783/public_html/backend/common/libraries/yii/framework/validators/CValidator.php(213): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#11 /home/u356701783/public_html/backend/common/libraries/yii/framework/base/CModel.php(159): CValidator->validate(Object(LoginForm), Array)
+#12 /home/u356701783/public_html/backend/protected/controllers/SiteController.php(94): CModel->validate()
+#13 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/actions/CInlineAction.php(49): SiteController->actionLogin()
+#14 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#15 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#16 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CWebApplication.php(282): CController->run('login')
+#18 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/login')
+#19 /home/u356701783/public_html/backend/common/libraries/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#20 /home/u356701783/public_html/backend/index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/backend/index.php/site/login
+HTTP_REFERER=http://shs2apicalls.pe.hu/backend/index.php/site/login
+---
+2018/02/14 06:36:31 [error] [exception.CDbException] CDbException: CDbConnection failed to open the DB connection: SQLSTATE[HY000] [1044] Access denied for user 'u356701783_harid'@'localhost' to database 'waiter' in /home/u356701783/public_html/backend/common/libraries/yii/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /home/u356701783/public_html/backend/common/libraries/yii/framework/db/CDbConnection.php(330): CDbConnection->open()
+#1 /home/u356701783/public_html/backend/common/libraries/yii/framework/db/CDbConnection.php(308): CDbConnection->setActive(true)
+#2 /home/u356701783/public_html/backend/common/libraries/yii/framework/base/CModule.php(387): CDbConnection->init()
+#3 /home/u356701783/public_html/backend/common/libraries/yii/framework/base/CApplication.php(450): CModule->getComponent('db')
+#4 /home/u356701783/public_html/backend/common/libraries/yii/framework/db/ar/CActiveRecord.php(634): CApplication->getDb()
+#5 /home/u356701783/public_html/backend/common/libraries/yii/framework/db/ar/CActiveRecord.php(1428): CActiveRecord->getDbConnection()
+#6 /home/u356701783/public_html/backend/common/libraries/yii/framework/db/ar/CActiveRecord.php(1517): CActiveRecord->getTableAlias(true)
+#7 /home/u356701783/public_html/backend/protected/components/UserIdentity.php(22): CActiveRecord->findByAttributes(Array)
+#8 /home/u356701783/public_html/backend/protected/models/LoginForm.php(52): UserIdentity->authenticate()
+#9 /home/u356701783/public_html/backend/common/libraries/yii/framework/validators/CInlineValidator.php(42): LoginForm->authenticate('password', Array)
+#10 /home/u356701783/public_html/backend/common/libraries/yii/framework/validators/CValidator.php(213): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#11 /home/u356701783/public_html/backend/common/libraries/yii/framework/base/CModel.php(159): CValidator->validate(Object(LoginForm), Array)
+#12 /home/u356701783/public_html/backend/protected/controllers/SiteController.php(94): CModel->validate()
+#13 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/actions/CInlineAction.php(49): SiteController->actionLogin()
+#14 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#15 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#16 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CWebApplication.php(282): CController->run('login')
+#18 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/login')
+#19 /home/u356701783/public_html/backend/common/libraries/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#20 /home/u356701783/public_html/backend/index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/backend/index.php/site/login
+HTTP_REFERER=http://shs2apicalls.pe.hu/backend/index.php/site/login
+---
+2018/03/07 07:45:37 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'u356701783_wait1.tax' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `tax`.
+in /home/u356701783/public_html/backend/protected/controllers/TaxController.php (155)
+in /home/u356701783/public_html/backend/protected/controllers/TaxController.php (89)
+in /home/u356701783/public_html/backend/index.php (13)
+2018/03/07 07:45:37 [error] [exception.CDbException] CDbException: The table "tax" for active record class "Tax" cannot be found in the database. in /home/u356701783/public_html/backend/common/libraries/yii/framework/db/ar/CActiveRecord.php:2362
+Stack trace:
+#0 /home/u356701783/public_html/backend/common/libraries/yii/framework/db/ar/CActiveRecord.php(411): CActiveRecordMetaData->__construct(Object(Tax))
+#1 /home/u356701783/public_html/backend/common/libraries/yii/framework/db/ar/CActiveRecord.php(658): CActiveRecord->getMetaData()
+#2 /home/u356701783/public_html/backend/common/libraries/yii/framework/db/ar/CActiveRecord.php(1485): CActiveRecord->getTableSchema()
+#3 /home/u356701783/public_html/backend/protected/controllers/TaxController.php(155): CActiveRecord->findByPk('1')
+#4 /home/u356701783/public_html/backend/protected/controllers/TaxController.php(89): TaxController->loadModel('1')
+#5 [internal function]: TaxController->actionUpdate('1')
+#6 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(TaxController), Array)
+#7 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(TaxController), Object(ReflectionMethod), Array)
+#8 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#9 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#11 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CController.php(291): CFilterChain->run()
+#15 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CWebApplication.php(282): CController->run('update')
+#17 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('tax/update')
+#18 /home/u356701783/public_html/backend/common/libraries/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#19 /home/u356701783/public_html/backend/index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/backend/index.php/tax/update/1
+HTTP_REFERER=http://shs2apicalls.pe.hu/backend/index.php
+---
+2018/03/07 07:47:10 [error] [exception.TypeError] TypeError: Argument 1 passed to Mike42\Escpos\Printer::__construct() must be an instance of Mike42\Escpos\PrintConnectors\PrintConnector, string given, called in /home/u356701783/public_html/backend/protected/controllers/CartController.php on line 161 and defined in /home/u356701783/public_html/backend/protected/vendor/mike42/escpos-php/src/Mike42/Escpos/Printer.php:361
+Stack trace:
+#0 /home/u356701783/public_html/backend/protected/controllers/CartController.php(161): Mike42\Escpos\Printer->__construct('POS-58')
+#1 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/actions/CInlineAction.php(49): CartController->actionPrint()
+#2 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#3 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CController.php(291): CFilterChain->run()
+#9 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CWebApplication.php(282): CController->run('print')
+#11 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('cart/print')
+#12 /home/u356701783/public_html/backend/common/libraries/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#13 /home/u356701783/public_html/backend/index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/backend/index.php/cart/print
+HTTP_REFERER=http://shs2apicalls.pe.hu/backend/index.php/cart/1
+---
+2018/03/07 07:48:43 [error] [exception.TypeError] TypeError: Argument 1 passed to Mike42\Escpos\Printer::__construct() must be an instance of Mike42\Escpos\PrintConnectors\PrintConnector, string given, called in /home/u356701783/public_html/backend/protected/controllers/CartController.php on line 161 and defined in /home/u356701783/public_html/backend/protected/vendor/mike42/escpos-php/src/Mike42/Escpos/Printer.php:361
+Stack trace:
+#0 /home/u356701783/public_html/backend/protected/controllers/CartController.php(161): Mike42\Escpos\Printer->__construct('POS-58')
+#1 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/actions/CInlineAction.php(49): CartController->actionPrint()
+#2 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#3 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CController.php(291): CFilterChain->run()
+#9 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CWebApplication.php(282): CController->run('print')
+#11 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('cart/print')
+#12 /home/u356701783/public_html/backend/common/libraries/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#13 /home/u356701783/public_html/backend/index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/backend/index.php/cart/print
+HTTP_REFERER=http://shs2apicalls.pe.hu/backend/index.php/cart/1
+---
+2018/03/07 07:51:18 [error] [exception.TypeError] TypeError: Argument 1 passed to Mike42\Escpos\Printer::__construct() must be an instance of Mike42\Escpos\PrintConnectors\PrintConnector, string given, called in /home/u356701783/public_html/backend/protected/controllers/CartController.php on line 161 and defined in /home/u356701783/public_html/backend/protected/vendor/mike42/escpos-php/src/Mike42/Escpos/Printer.php:361
+Stack trace:
+#0 /home/u356701783/public_html/backend/protected/controllers/CartController.php(161): Mike42\Escpos\Printer->__construct('POS-58')
+#1 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/actions/CInlineAction.php(49): CartController->actionPrint()
+#2 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#3 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CController.php(291): CFilterChain->run()
+#9 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CWebApplication.php(282): CController->run('print')
+#11 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('cart/print')
+#12 /home/u356701783/public_html/backend/common/libraries/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#13 /home/u356701783/public_html/backend/index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/backend/index.php/cart/print
+HTTP_REFERER=http://shs2apicalls.pe.hu/backend/index.php/cart/1
+---
+2018/03/07 07:51:45 [error] [exception.TypeError] TypeError: Argument 1 passed to Mike42\Escpos\Printer::__construct() must be an instance of Mike42\Escpos\PrintConnectors\PrintConnector, string given, called in /home/u356701783/public_html/backend/protected/controllers/CartController.php on line 161 and defined in /home/u356701783/public_html/backend/protected/vendor/mike42/escpos-php/src/Mike42/Escpos/Printer.php:361
+Stack trace:
+#0 /home/u356701783/public_html/backend/protected/controllers/CartController.php(161): Mike42\Escpos\Printer->__construct('POS-58')
+#1 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/actions/CInlineAction.php(49): CartController->actionPrint()
+#2 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#3 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CController.php(291): CFilterChain->run()
+#9 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CWebApplication.php(282): CController->run('print')
+#11 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('cart/print')
+#12 /home/u356701783/public_html/backend/common/libraries/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#13 /home/u356701783/public_html/backend/index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/backend/index.php/cart/print
+HTTP_REFERER=http://shs2apicalls.pe.hu/backend/index.php/cart/1
+---
+2018/03/07 07:52:15 [error] [exception.TypeError] TypeError: Argument 1 passed to Mike42\Escpos\Printer::__construct() must be an instance of Mike42\Escpos\PrintConnectors\PrintConnector, string given, called in /home/u356701783/public_html/backend/protected/controllers/CartController.php on line 161 and defined in /home/u356701783/public_html/backend/protected/vendor/mike42/escpos-php/src/Mike42/Escpos/Printer.php:361
+Stack trace:
+#0 /home/u356701783/public_html/backend/protected/controllers/CartController.php(161): Mike42\Escpos\Printer->__construct('POS-58')
+#1 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/actions/CInlineAction.php(49): CartController->actionPrint()
+#2 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#3 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CController.php(291): CFilterChain->run()
+#9 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CWebApplication.php(282): CController->run('print')
+#11 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('cart/print')
+#12 /home/u356701783/public_html/backend/common/libraries/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#13 /home/u356701783/public_html/backend/index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/backend/index.php/cart/print
+HTTP_REFERER=http://shs2apicalls.pe.hu/backend/index.php/cart/1
+---
+2018/03/07 07:54:18 [error] [exception.TypeError] TypeError: Argument 1 passed to Mike42\Escpos\Printer::__construct() must be an instance of Mike42\Escpos\PrintConnectors\PrintConnector, string given, called in /home/u356701783/public_html/backend/protected/controllers/CartController.php on line 161 and defined in /home/u356701783/public_html/backend/protected/vendor/mike42/escpos-php/src/Mike42/Escpos/Printer.php:361
+Stack trace:
+#0 /home/u356701783/public_html/backend/protected/controllers/CartController.php(161): Mike42\Escpos\Printer->__construct('POS-58')
+#1 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/actions/CInlineAction.php(49): CartController->actionPrint()
+#2 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#3 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CController.php(291): CFilterChain->run()
+#9 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CWebApplication.php(282): CController->run('print')
+#11 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('cart/print')
+#12 /home/u356701783/public_html/backend/common/libraries/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#13 /home/u356701783/public_html/backend/index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/backend/index.php/cart/print
+HTTP_REFERER=http://shs2apicalls.pe.hu/backend/index.php/cart/1
+---
+2018/03/07 07:54:37 [error] [exception.TypeError] TypeError: Argument 1 passed to Mike42\Escpos\Printer::__construct() must be an instance of Mike42\Escpos\PrintConnectors\PrintConnector, string given, called in /home/u356701783/public_html/backend/protected/controllers/CartController.php on line 161 and defined in /home/u356701783/public_html/backend/protected/vendor/mike42/escpos-php/src/Mike42/Escpos/Printer.php:361
+Stack trace:
+#0 /home/u356701783/public_html/backend/protected/controllers/CartController.php(161): Mike42\Escpos\Printer->__construct('POS-58')
+#1 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/actions/CInlineAction.php(49): CartController->actionPrint()
+#2 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#3 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CController.php(291): CFilterChain->run()
+#9 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CWebApplication.php(282): CController->run('print')
+#11 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('cart/print')
+#12 /home/u356701783/public_html/backend/common/libraries/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#13 /home/u356701783/public_html/backend/index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/backend/index.php/cart/print
+HTTP_REFERER=http://shs2apicalls.pe.hu/backend/index.php/cart/1
+---
+2018/03/07 08:03:11 [error] [exception.TypeError] TypeError: Argument 1 passed to Mike42\Escpos\Printer::__construct() must be an instance of Mike42\Escpos\PrintConnectors\PrintConnector, string given, called in /home/u356701783/public_html/backend/protected/controllers/CartController.php on line 161 and defined in /home/u356701783/public_html/backend/protected/vendor/mike42/escpos-php/src/Mike42/Escpos/Printer.php:361
+Stack trace:
+#0 /home/u356701783/public_html/backend/protected/controllers/CartController.php(161): Mike42\Escpos\Printer->__construct('POS-58')
+#1 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/actions/CInlineAction.php(49): CartController->actionPrint()
+#2 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#3 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CController.php(291): CFilterChain->run()
+#9 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CWebApplication.php(282): CController->run('print')
+#11 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('cart/print')
+#12 /home/u356701783/public_html/backend/common/libraries/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#13 /home/u356701783/public_html/backend/index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/backend/index.php/cart/print
+HTTP_REFERER=http://shs2apicalls.pe.hu/backend/index.php/cart/1
+---
+2018/03/07 08:06:38 [error] [exception.TypeError] TypeError: Argument 1 passed to Mike42\Escpos\Printer::__construct() must be an instance of Mike42\Escpos\PrintConnectors\PrintConnector, string given, called in /home/u356701783/public_html/backend/protected/controllers/CartController.php on line 161 and defined in /home/u356701783/public_html/backend/protected/vendor/mike42/escpos-php/src/Mike42/Escpos/Printer.php:361
+Stack trace:
+#0 /home/u356701783/public_html/backend/protected/controllers/CartController.php(161): Mike42\Escpos\Printer->__construct('POS-58')
+#1 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/actions/CInlineAction.php(49): CartController->actionPrint()
+#2 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#3 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CController.php(291): CFilterChain->run()
+#9 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CWebApplication.php(282): CController->run('print')
+#11 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('cart/print')
+#12 /home/u356701783/public_html/backend/common/libraries/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#13 /home/u356701783/public_html/backend/index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/backend/index.php/cart/print
+HTTP_REFERER=http://shs2apicalls.pe.hu/backend/index.php/cart/2
+---
+2018/03/12 12:11:47 [error] [php] Undefined variable: Grandtotal (/home/u356701783/public_html/backend/protected/views/cart/view.php:197)
+Stack trace:
+#0 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CController.php(869): CartController->renderFile()
+#1 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CController.php(782): CartController->renderPartial()
+#2 /home/u356701783/public_html/backend/protected/controllers/CartController.php(64): CartController->render()
+#3 unknown(0): CartController->actionView()
+#4 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#5 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#6 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#7 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/filters/CFilterChain.php(133): CartController->runAction()
+#8 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#9 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#10 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/filters/CInlineFilter.php(58): CartController->filterAccessControl()
+#11 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#12 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CController.php(291): CFilterChain->run()
+#13 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CController.php(265): CartController->runActionWithFilters()
+#14 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CWebApplication.php(282): CartController->run()
+#15 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#16 /home/u356701783/public_html/backend/common/libraries/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#17 /home/u356701783/public_html/backend/index.php(13): CWebApplication->run()
+REQUEST_URI=/backend/index.php/cart/1
+in /home/u356701783/public_html/backend/protected/views/cart/view.php (197)
+in /home/u356701783/public_html/backend/protected/controllers/CartController.php (64)
+in /home/u356701783/public_html/backend/index.php (13)
+2018/03/12 12:11:53 [error] [php] Undefined variable: Grandtotal (/home/u356701783/public_html/backend/protected/views/cart/view.php:197)
+Stack trace:
+#0 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CController.php(869): CartController->renderFile()
+#1 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CController.php(782): CartController->renderPartial()
+#2 /home/u356701783/public_html/backend/protected/controllers/CartController.php(64): CartController->render()
+#3 unknown(0): CartController->actionView()
+#4 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#5 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#6 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#7 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/filters/CFilterChain.php(133): CartController->runAction()
+#8 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#9 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#10 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/filters/CInlineFilter.php(58): CartController->filterAccessControl()
+#11 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#12 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CController.php(291): CFilterChain->run()
+#13 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CController.php(265): CartController->runActionWithFilters()
+#14 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CWebApplication.php(282): CartController->run()
+#15 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#16 /home/u356701783/public_html/backend/common/libraries/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#17 /home/u356701783/public_html/backend/index.php(13): CWebApplication->run()
+REQUEST_URI=/backend/index.php/cart/1
+in /home/u356701783/public_html/backend/protected/views/cart/view.php (197)
+in /home/u356701783/public_html/backend/protected/controllers/CartController.php (64)
+in /home/u356701783/public_html/backend/index.php (13)
+2018/03/12 12:12:04 [error] [php] Undefined variable: Grandtotal (/home/u356701783/public_html/backend/protected/views/cart/view.php:197)
+Stack trace:
+#0 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CController.php(869): CartController->renderFile()
+#1 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CController.php(782): CartController->renderPartial()
+#2 /home/u356701783/public_html/backend/protected/controllers/CartController.php(64): CartController->render()
+#3 unknown(0): CartController->actionView()
+#4 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#5 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#6 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#7 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/filters/CFilterChain.php(133): CartController->runAction()
+#8 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#9 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#10 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/filters/CInlineFilter.php(58): CartController->filterAccessControl()
+#11 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#12 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CController.php(291): CFilterChain->run()
+#13 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CController.php(265): CartController->runActionWithFilters()
+#14 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CWebApplication.php(282): CartController->run()
+#15 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#16 /home/u356701783/public_html/backend/common/libraries/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#17 /home/u356701783/public_html/backend/index.php(13): CWebApplication->run()
+REQUEST_URI=/backend/index.php/cart/1
+in /home/u356701783/public_html/backend/protected/views/cart/view.php (197)
+in /home/u356701783/public_html/backend/protected/controllers/CartController.php (64)
+in /home/u356701783/public_html/backend/index.php (13)
+2018/03/12 12:12:06 [error] [php] Undefined variable: Grandtotal (/home/u356701783/public_html/backend/protected/views/cart/view.php:197)
+Stack trace:
+#0 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CController.php(869): CartController->renderFile()
+#1 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CController.php(782): CartController->renderPartial()
+#2 /home/u356701783/public_html/backend/protected/controllers/CartController.php(64): CartController->render()
+#3 unknown(0): CartController->actionView()
+#4 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#5 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#6 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#7 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/filters/CFilterChain.php(133): CartController->runAction()
+#8 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#9 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#10 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/filters/CInlineFilter.php(58): CartController->filterAccessControl()
+#11 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#12 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CController.php(291): CFilterChain->run()
+#13 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CController.php(265): CartController->runActionWithFilters()
+#14 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CWebApplication.php(282): CartController->run()
+#15 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#16 /home/u356701783/public_html/backend/common/libraries/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#17 /home/u356701783/public_html/backend/index.php(13): CWebApplication->run()
+REQUEST_URI=/backend/index.php/cart/1
+in /home/u356701783/public_html/backend/protected/views/cart/view.php (197)
+in /home/u356701783/public_html/backend/protected/controllers/CartController.php (64)
+in /home/u356701783/public_html/backend/index.php (13)
+2018/03/12 13:29:12 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "showcart&tableId=32". in /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CController.php:483
+Stack trace:
+#0 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CController.php(270): CController->missingAction('showcart&tableI...')
+#1 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CWebApplication.php(282): CController->run('showcart&tableI...')
+#2 /home/u356701783/public_html/backend/common/libraries/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('api/showcart&ta...')
+#3 /home/u356701783/public_html/backend/common/libraries/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /home/u356701783/public_html/backend/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/backend/index.php/api/showcart&tableId=32
+---
+2018/03/19 11:04:54 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'waiter.tax' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `tax`.
+in C:\xampp\htdocs\RestoHelper\protected\controllers\TaxController.php (155)
+in C:\xampp\htdocs\RestoHelper\protected\controllers\TaxController.php (89)
+in C:\xampp\htdocs\RestoHelper\index.php (13)
+2018/03/19 11:04:54 [error] [exception.CDbException] CDbException: The table "tax" for active record class "Tax" cannot be found in the database. in C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\db\ar\CActiveRecord.php:2362
+Stack trace:
+#0 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\db\ar\CActiveRecord.php(411): CActiveRecordMetaData->__construct(Object(Tax))
+#1 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\db\ar\CActiveRecord.php(658): CActiveRecord->getMetaData()
+#2 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\db\ar\CActiveRecord.php(1485): CActiveRecord->getTableSchema()
+#3 C:\xampp\htdocs\RestoHelper\protected\controllers\TaxController.php(155): CActiveRecord->findByPk('1')
+#4 C:\xampp\htdocs\RestoHelper\protected\controllers\TaxController.php(89): TaxController->loadModel('1')
+#5 [internal function]: TaxController->actionUpdate('1')
+#6 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(TaxController), Array)
+#7 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(TaxController), Object(ReflectionMethod), Array)
+#8 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(291): CFilterChain->run()
+#15 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CWebApplication.php(282): CController->run('update')
+#17 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('tax/update')
+#18 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\RestoHelper\index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/restohelper/index.php/tax/update/1
+HTTP_REFERER=http://localhost/restohelper/index.php/cart/admin
+---
+2018/03/19 11:07:04 [error] [exception.CDbException] CDbException: Column name must be either a string or an array. in C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\db\schema\CDbCommandBuilder.php:828
+Stack trace:
+#0 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\db\schema\CDbCommandBuilder.php(621): CDbCommandBuilder->createInCondition(Object(CMysqlTableSchema), NULL, Array, '`t`.')
+#1 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\db\ar\CActiveRecord.php(1485): CDbCommandBuilder->createPkCriteria(Object(CMysqlTableSchema), Array, '', Array, '`t`.')
+#2 C:\xampp\htdocs\RestoHelper\protected\controllers\TaxController.php(155): CActiveRecord->findByPk('1')
+#3 C:\xampp\htdocs\RestoHelper\protected\controllers\TaxController.php(89): TaxController->loadModel('1')
+#4 [internal function]: TaxController->actionUpdate('1')
+#5 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(TaxController), Array)
+#6 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(TaxController), Object(ReflectionMethod), Array)
+#7 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#9 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#10 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#11 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#12 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#13 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(291): CFilterChain->run()
+#14 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CWebApplication.php(282): CController->run('update')
+#16 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('tax/update')
+#17 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#18 C:\xampp\htdocs\RestoHelper\index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/restohelper/index.php/tax/update/1
+HTTP_REFERER=http://localhost/restohelper/index.php/cart/admin
+---
+2018/03/19 11:07:51 [error] [exception.CDbException] CDbException: Column name must be either a string or an array. in C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\db\schema\CDbCommandBuilder.php:828
+Stack trace:
+#0 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\db\schema\CDbCommandBuilder.php(621): CDbCommandBuilder->createInCondition(Object(CMysqlTableSchema), NULL, Array, '`t`.')
+#1 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\db\ar\CActiveRecord.php(1485): CDbCommandBuilder->createPkCriteria(Object(CMysqlTableSchema), Array, '', Array, '`t`.')
+#2 C:\xampp\htdocs\RestoHelper\protected\controllers\TaxController.php(155): CActiveRecord->findByPk('1')
+#3 C:\xampp\htdocs\RestoHelper\protected\controllers\TaxController.php(89): TaxController->loadModel('1')
+#4 [internal function]: TaxController->actionUpdate('1')
+#5 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(TaxController), Array)
+#6 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(TaxController), Object(ReflectionMethod), Array)
+#7 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#9 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#10 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#11 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#12 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#13 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(291): CFilterChain->run()
+#14 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CWebApplication.php(282): CController->run('update')
+#16 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('tax/update')
+#17 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#18 C:\xampp\htdocs\RestoHelper\index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/restohelper/index.php/tax/update/1
+HTTP_REFERER=http://localhost/restohelper/index.php/cart/admin
+---
+2018/03/19 11:10:22 [error] [exception.CDbException] CDbException: Column name must be either a string or an array. in C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\db\schema\CDbCommandBuilder.php:828
+Stack trace:
+#0 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\db\schema\CDbCommandBuilder.php(621): CDbCommandBuilder->createInCondition(Object(CMysqlTableSchema), NULL, Array, '`t`.')
+#1 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\db\ar\CActiveRecord.php(1485): CDbCommandBuilder->createPkCriteria(Object(CMysqlTableSchema), Array, '', Array, '`t`.')
+#2 C:\xampp\htdocs\RestoHelper\protected\controllers\BillController.php(112): CActiveRecord->findByPk('1')
+#3 C:\xampp\htdocs\RestoHelper\protected\controllers\BillController.php(71): BillController->loadModel('1')
+#4 [internal function]: BillController->actionUpdate('1')
+#5 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(BillController), Array)
+#6 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(BillController), Object(ReflectionMethod), Array)
+#7 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#9 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#10 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#11 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#12 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#13 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(291): CFilterChain->run()
+#14 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CWebApplication.php(282): CController->run('update')
+#16 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('bill/update')
+#17 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#18 C:\xampp\htdocs\RestoHelper\index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/restohelper/index.php/bill/update/1
+HTTP_REFERER=http://localhost/restohelper/index.php/cart/admin
+---
+2018/03/19 11:10:37 [error] [exception.CDbException] CDbException: Column name must be either a string or an array. in C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\db\schema\CDbCommandBuilder.php:828
+Stack trace:
+#0 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\db\schema\CDbCommandBuilder.php(621): CDbCommandBuilder->createInCondition(Object(CMysqlTableSchema), NULL, Array, '`t`.')
+#1 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\db\ar\CActiveRecord.php(1485): CDbCommandBuilder->createPkCriteria(Object(CMysqlTableSchema), Array, '', Array, '`t`.')
+#2 C:\xampp\htdocs\RestoHelper\protected\controllers\TaxController.php(155): CActiveRecord->findByPk('1')
+#3 C:\xampp\htdocs\RestoHelper\protected\controllers\TaxController.php(89): TaxController->loadModel('1')
+#4 [internal function]: TaxController->actionUpdate('1')
+#5 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(TaxController), Array)
+#6 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(TaxController), Object(ReflectionMethod), Array)
+#7 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#9 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#10 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#11 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#12 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#13 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(291): CFilterChain->run()
+#14 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CWebApplication.php(282): CController->run('update')
+#16 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('tax/update')
+#17 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#18 C:\xampp\htdocs\RestoHelper\index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/restohelper/index.php/tax/update/1
+HTTP_REFERER=http://localhost/restohelper/index.php/cart/admin
+---
+2018/03/19 11:37:38 [error] [php] include(printsetting.php): failed to open stream: No such file or directory (C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\YiiBase.php:427)
+Stack trace:
+#0 C:\xampp\htdocs\RestoHelper\protected\controllers\api\SearchLoginAction.php(13): spl_autoload_call()
+#1 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\actions\CAction.php(76): SearchLoginAction->run()
+#2 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(308): SearchLoginAction->runWithParams()
+#3 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(286): ApiController->runAction()
+#4 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(265): ApiController->runActionWithFilters()
+#5 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CWebApplication.php(282): ApiController->run()
+#6 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#8 C:\xampp\htdocs\RestoHelper\index.php(13): CWebApplication->run()
+REQUEST_URI=/restohelper/index.php/api/login
+in C:\xampp\htdocs\RestoHelper\protected\controllers\api\SearchLoginAction.php (13)
+in C:\xampp\htdocs\RestoHelper\index.php (13)
+2018/03/19 11:37:58 [error] [php] include(printsetting.php): failed to open stream: No such file or directory (C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\YiiBase.php:427)
+Stack trace:
+#0 C:\xampp\htdocs\RestoHelper\protected\controllers\api\SearchLoginAction.php(13): spl_autoload_call()
+#1 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\actions\CAction.php(76): SearchLoginAction->run()
+#2 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(308): SearchLoginAction->runWithParams()
+#3 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(286): ApiController->runAction()
+#4 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(265): ApiController->runActionWithFilters()
+#5 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CWebApplication.php(282): ApiController->run()
+#6 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#8 C:\xampp\htdocs\RestoHelper\index.php(13): CWebApplication->run()
+REQUEST_URI=/restohelper/index.php/api/login
+in C:\xampp\htdocs\RestoHelper\protected\controllers\api\SearchLoginAction.php (13)
+in C:\xampp\htdocs\RestoHelper\index.php (13)
+2018/03/19 11:38:16 [error] [php] include(printsetting.php): failed to open stream: No such file or directory (C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\YiiBase.php:427)
+Stack trace:
+#0 C:\xampp\htdocs\RestoHelper\protected\controllers\api\SearchLoginAction.php(13): spl_autoload_call()
+#1 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\actions\CAction.php(76): SearchLoginAction->run()
+#2 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(308): SearchLoginAction->runWithParams()
+#3 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(286): ApiController->runAction()
+#4 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(265): ApiController->runActionWithFilters()
+#5 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CWebApplication.php(282): ApiController->run()
+#6 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#8 C:\xampp\htdocs\RestoHelper\index.php(13): CWebApplication->run()
+REQUEST_URI=/restohelper/index.php/api/login
+in C:\xampp\htdocs\RestoHelper\protected\controllers\api\SearchLoginAction.php (13)
+in C:\xampp\htdocs\RestoHelper\index.php (13)
+2018/03/19 11:38:29 [error] [php] include(printsetting.php): failed to open stream: No such file or directory (C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\YiiBase.php:427)
+Stack trace:
+#0 C:\xampp\htdocs\RestoHelper\protected\controllers\api\SearchLoginAction.php(13): spl_autoload_call()
+#1 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\actions\CAction.php(76): SearchLoginAction->run()
+#2 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(308): SearchLoginAction->runWithParams()
+#3 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(286): ApiController->runAction()
+#4 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(265): ApiController->runActionWithFilters()
+#5 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CWebApplication.php(282): ApiController->run()
+#6 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#8 C:\xampp\htdocs\RestoHelper\index.php(13): CWebApplication->run()
+REQUEST_URI=/restohelper/index.php/api/login
+in C:\xampp\htdocs\RestoHelper\protected\controllers\api\SearchLoginAction.php (13)
+in C:\xampp\htdocs\RestoHelper\index.php (13)
+2018/03/20 07:28:43 [error] [exception.ParseError] ParseError: syntax error, unexpected '/', expecting function (T_FUNCTION) or const (T_CONST) in C:\xampp\htdocs\RestoHelper\protected\models\Tax.php:97
+Stack trace:
+#0 [internal function]: YiiBase::autoload('Tax')
+#1 C:\xampp\htdocs\RestoHelper\protected\controllers\TaxController.php(155): spl_autoload_call('Tax')
+#2 C:\xampp\htdocs\RestoHelper\protected\controllers\TaxController.php(89): TaxController->loadModel('1')
+#3 [internal function]: TaxController->actionUpdate('1')
+#4 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(TaxController), Array)
+#5 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(TaxController), Object(ReflectionMethod), Array)
+#6 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#8 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#9 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#11 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#12 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(291): CFilterChain->run()
+#13 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CWebApplication.php(282): CController->run('update')
+#15 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('tax/update')
+#16 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#17 C:\xampp\htdocs\RestoHelper\index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/restohelper/index.php/tax/update/1
+HTTP_REFERER=http://localhost/restohelper/index.php
+---
+2018/03/20 07:29:06 [error] [exception.ParseError] ParseError: syntax error, unexpected '/', expecting function (T_FUNCTION) or const (T_CONST) in C:\xampp\htdocs\RestoHelper\protected\models\Tax.php:97
+Stack trace:
+#0 [internal function]: YiiBase::autoload('Tax')
+#1 C:\xampp\htdocs\RestoHelper\protected\controllers\TaxController.php(155): spl_autoload_call('Tax')
+#2 C:\xampp\htdocs\RestoHelper\protected\controllers\TaxController.php(89): TaxController->loadModel('1')
+#3 [internal function]: TaxController->actionUpdate('1')
+#4 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(TaxController), Array)
+#5 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(TaxController), Object(ReflectionMethod), Array)
+#6 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#8 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#9 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#11 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#12 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(291): CFilterChain->run()
+#13 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CWebApplication.php(282): CController->run('update')
+#15 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('tax/update')
+#16 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#17 C:\xampp\htdocs\RestoHelper\index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/restohelper/index.php/tax/update/1
+HTTP_REFERER=http://localhost/restohelper/index.php/bill/update/1
+---
+2018/03/29 11:59:44 [error] [exception.CException] CException: Property "CHttpRequest.userHostAddres" is not defined. in C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\RestoHelper\protected\views\login\view.php(4): CComponent->__get('userHostAddres')
+#1 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#3 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(782): CController->renderPartial('view', Array, true)
+#5 C:\xampp\htdocs\RestoHelper\protected\controllers\LoginController.php(55): CController->render('view', Array)
+#6 [internal function]: LoginController->actionView('25')
+#7 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(LoginController), Array)
+#8 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(LoginController), Object(ReflectionMethod), Array)
+#9 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#11 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#12 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#13 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#15 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(291): CFilterChain->run()
+#16 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#18 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('login/view')
+#19 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#20 C:\xampp\htdocs\RestoHelper\index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/restohelper/index.php/login/25
+HTTP_REFERER=http://localhost/restohelper/index.php/login/admin
+---
+2018/03/29 12:43:51 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'waiter.id' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `id`.
+in C:\xampp\htdocs\RestoHelper\index.php (13)
+2018/03/29 12:43:58 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'waiter.id' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `id`.
+in C:\xampp\htdocs\RestoHelper\index.php (13)
+2018/03/29 12:44:38 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'waiter.id' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `id`.
+in C:\xampp\htdocs\RestoHelper\index.php (13)
+2018/03/30 09:19:40 [error] [exception.CHttpException.400] CHttpException: Your request is invalid. in C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php:336
+Stack trace:
+#0 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CWebApplication.php(282): CController->run('update')
+#9 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('tax/update')
+#10 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\RestoHelper\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/restohelper/index.php/tax/update
+---
+2018/04/23 08:40:10 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'waiter.id' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `id`.
+in C:\xampp\htdocs\RestoHelper\index.php (13)
+2018/04/23 08:40:18 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'waiter.id' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `id`.
+in C:\xampp\htdocs\RestoHelper\index.php (13)
+2018/04/23 08:41:49 [error] [exception.CHttpException.404] CHttpException: Unable to find the code you requested. in C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\gii\CCodeGenerator.php:90
+Stack trace:
+#0 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\actions\CInlineAction.php(49): CCodeGenerator->actionCode()
+#1 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#2 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#3 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#4 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CWebApplication.php(282): CController->run('code')
+#5 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('gii/form/code/i...')
+#6 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#7 C:\xampp\htdocs\RestoHelper\index.php(13): CApplication->run()
+#8 {main}
+REQUEST_URI=/restohelper/index.php/gii/form/code/id/0
+HTTP_REFERER=http://localhost/restohelper/index.php/gii/form/index
+---
+2018/04/30 09:04:52 [error] [exception.CHttpException.404] CHttpException: Unable to find the code you requested. in C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\gii\CCodeGenerator.php:90
+Stack trace:
+#0 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\actions\CInlineAction.php(49): CCodeGenerator->actionCode()
+#1 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#2 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#3 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#4 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CWebApplication.php(282): CController->run('code')
+#5 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('gii/controller/...')
+#6 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#7 C:\xampp\htdocs\RestoHelper\index.php(13): CApplication->run()
+#8 {main}
+REQUEST_URI=/restohelper/index.php/gii/controller/code/id/0
+HTTP_REFERER=http://localhost/restohelper/index.php/gii/controller/index
+---
+2018/04/30 14:59:35 [error] [exception.CException] CException: Property "ModelCode.model" is not defined. in C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\gii\generators\model\ModelCode.php(189): CComponent->__get('model')
+#1 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\validators\CInlineValidator.php(42): ModelCode->validateBaseClass('baseClass', Array)
+#2 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\validators\CValidator.php(213): CInlineValidator->validateAttribute(Object(ModelCode), 'baseClass')
+#3 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\base\CModel.php(159): CValidator->validate(Object(ModelCode), Array)
+#4 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\gii\CCodeGenerator.php(159): CModel->validate()
+#5 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\gii\CCodeGenerator.php(63): CCodeGenerator->prepare()
+#6 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\actions\CInlineAction.php(49): CCodeGenerator->actionIndex()
+#7 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CWebApplication.php(282): CController->run('index')
+#11 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('gii/model/index')
+#12 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\RestoHelper\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/restohelper/index.php/gii/model/index
+HTTP_REFERER=http://localhost/restohelper/index.php/gii/model/index
+---
+2018/04/30 15:00:00 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'waiter.id' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `id`.
+in C:\xampp\htdocs\RestoHelper\index.php (13)
+2018/04/30 15:00:55 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'waiter.id' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `id`.
+in C:\xampp\htdocs\RestoHelper\index.php (13)
+2018/04/30 15:00:58 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'waiter.id' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `id`.
+in C:\xampp\htdocs\RestoHelper\index.php (13)
+2018/04/30 15:28:16 [error] [exception.CException] CException: Property "ModelCode.model" is not defined. in C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\gii\generators\model\ModelCode.php(189): CComponent->__get('model')
+#1 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\validators\CInlineValidator.php(42): ModelCode->validateBaseClass('baseClass', Array)
+#2 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\validators\CValidator.php(213): CInlineValidator->validateAttribute(Object(ModelCode), 'baseClass')
+#3 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\base\CModel.php(159): CValidator->validate(Object(ModelCode), Array)
+#4 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\gii\CCodeGenerator.php(159): CModel->validate()
+#5 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\gii\CCodeGenerator.php(63): CCodeGenerator->prepare()
+#6 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\actions\CInlineAction.php(49): CCodeGenerator->actionIndex()
+#7 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CWebApplication.php(282): CController->run('index')
+#11 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('gii/model/index')
+#12 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\RestoHelper\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/restohelper/index.php/gii/model/index
+HTTP_REFERER=http://localhost/restohelper/index.php/gii/model/index
+---
+2018/04/30 15:28:32 [error] [exception.CException] CException: Property "ModelCode.model" is not defined. in C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\gii\generators\model\ModelCode.php(189): CComponent->__get('model')
+#1 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\validators\CInlineValidator.php(42): ModelCode->validateBaseClass('baseClass', Array)
+#2 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\validators\CValidator.php(213): CInlineValidator->validateAttribute(Object(ModelCode), 'baseClass')
+#3 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\base\CModel.php(159): CValidator->validate(Object(ModelCode), Array)
+#4 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\gii\CCodeGenerator.php(159): CModel->validate()
+#5 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\gii\CCodeGenerator.php(63): CCodeGenerator->prepare()
+#6 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\actions\CInlineAction.php(49): CCodeGenerator->actionIndex()
+#7 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CWebApplication.php(282): CController->run('index')
+#11 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('gii/model/index')
+#12 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\RestoHelper\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/restohelper/index.php/gii/model/index
+HTTP_REFERER=http://localhost/restohelper/index.php/gii/model/index
+---
+2018/04/30 15:28:42 [error] [exception.CException] CException: Property "ModelCode.model" is not defined. in C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\gii\generators\model\ModelCode.php(189): CComponent->__get('model')
+#1 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\validators\CInlineValidator.php(42): ModelCode->validateBaseClass('baseClass', Array)
+#2 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\validators\CValidator.php(213): CInlineValidator->validateAttribute(Object(ModelCode), 'baseClass')
+#3 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\base\CModel.php(159): CValidator->validate(Object(ModelCode), Array)
+#4 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\gii\CCodeGenerator.php(159): CModel->validate()
+#5 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\gii\CCodeGenerator.php(63): CCodeGenerator->prepare()
+#6 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\actions\CInlineAction.php(49): CCodeGenerator->actionIndex()
+#7 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CWebApplication.php(282): CController->run('index')
+#11 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('gii/model/index')
+#12 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\RestoHelper\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/restohelper/index.php/gii/model/index
+HTTP_REFERER=http://localhost/restohelper/index.php/gii/model/index
+---
+2018/04/30 15:29:01 [error] [exception.CException] CException: Property "ModelCode.model" is not defined. in C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\gii\generators\model\ModelCode.php(189): CComponent->__get('model')
+#1 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\validators\CInlineValidator.php(42): ModelCode->validateBaseClass('baseClass', Array)
+#2 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\validators\CValidator.php(213): CInlineValidator->validateAttribute(Object(ModelCode), 'baseClass')
+#3 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\base\CModel.php(159): CValidator->validate(Object(ModelCode), Array)
+#4 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\gii\CCodeGenerator.php(159): CModel->validate()
+#5 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\gii\CCodeGenerator.php(63): CCodeGenerator->prepare()
+#6 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\actions\CInlineAction.php(49): CCodeGenerator->actionIndex()
+#7 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CWebApplication.php(282): CController->run('index')
+#11 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('gii/model/index')
+#12 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\RestoHelper\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/restohelper/index.php/gii/model/index
+HTTP_REFERER=http://localhost/restohelper/index.php/gii/model/index
+---
+2018/04/30 18:42:55 [error] [php] Undefined variable: CategoryId (C:\xampp\htdocs\RestoHelper\protected\controllers\api\CustDetailsAction.php:18)
+Stack trace:
+#0 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(286): ApiController->runAction()
+#1 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(265): ApiController->runActionWithFilters()
+#2 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CWebApplication.php(282): ApiController->run()
+#3 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\RestoHelper\index.php(13): CWebApplication->run()
+REQUEST_URI=/Restohelper/index.php/api/custDetails?json=%7B%22dob%22%3A%22%22%2C%22emailID%22%3A%22%22%2C%22name%22%3A%22Haridev%20%22%2C%22phone%22%3A%22%22%7D
+in C:\xampp\htdocs\RestoHelper\protected\controllers\api\CustDetailsAction.php (18)
+in C:\xampp\htdocs\RestoHelper\index.php (13)
+2018/04/30 18:48:44 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'waiter.id' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `id`.
+in C:\xampp\htdocs\RestoHelper\index.php (13)
+2018/04/30 18:48:55 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'waiter.id' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `id`.
+in C:\xampp\htdocs\RestoHelper\index.php (13)
+2018/04/30 18:49:14 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'waiter.id' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `id`.
+in C:\xampp\htdocs\RestoHelper\index.php (13)
+2018/04/30 18:49:40 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'waiter.id' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `id`.
+in C:\xampp\htdocs\RestoHelper\index.php (13)
+2018/04/30 18:54:29 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'waiter.id' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `id`.
+in C:\xampp\htdocs\RestoHelper\index.php (13)
+2018/04/30 18:54:33 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'waiter.id' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `id`.
+in C:\xampp\htdocs\RestoHelper\index.php (13)
+2018/05/02 07:34:54 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'LIMIT 1' at line 1. The SQL statement executed was: SELECT * FROM `customer` `t` WHERE phone=  LIMIT 1.
+in C:\xampp\htdocs\RestoHelper\protected\controllers\api\CustDetailsAction.php (33)
+in C:\xampp\htdocs\RestoHelper\index.php (13)
+2018/05/02 07:34:54 [error] [exception.CDbException] CDbException: CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'LIMIT 1' at line 1. The SQL statement executed was: SELECT * FROM `customer` `t` WHERE phone=  LIMIT 1 in C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\db\CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\db\ar\CActiveRecord.php(1351): CDbCommand->queryRow()
+#2 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\db\ar\CActiveRecord.php(1456): CActiveRecord->query(Object(CDbCriteria))
+#3 C:\xampp\htdocs\RestoHelper\protected\controllers\api\CustDetailsAction.php(33): CActiveRecord->find('phone= ')
+#4 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\actions\CAction.php(76): CustDetailsAction->run()
+#5 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(308): CAction->runWithParams(Array)
+#6 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(286): CController->runAction(Object(CustDetailsAction))
+#7 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CustDetailsAction), Array)
+#8 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CWebApplication.php(282): CController->run('custDetails')
+#9 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('api/custDetails')
+#10 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\RestoHelper\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/Restohelper/index.php/api/custDetails?json=%7B%22dob%22%3A%22%22%2C%22emailID%22%3A%22%22%2C%22name%22%3A%22Johnny%20%22%2C%22phone%22%3A%22%22%7D
+---
+2018/05/02 07:37:08 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'LIMIT 1' at line 1. The SQL statement executed was: SELECT * FROM `customer` `t` WHERE phone=  LIMIT 1.
+in C:\xampp\htdocs\RestoHelper\protected\controllers\api\CustDetailsAction.php (33)
+in C:\xampp\htdocs\RestoHelper\index.php (13)
+2018/05/02 07:37:09 [error] [exception.CDbException] CDbException: CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'LIMIT 1' at line 1. The SQL statement executed was: SELECT * FROM `customer` `t` WHERE phone=  LIMIT 1 in C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\db\CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\db\ar\CActiveRecord.php(1351): CDbCommand->queryRow()
+#2 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\db\ar\CActiveRecord.php(1456): CActiveRecord->query(Object(CDbCriteria))
+#3 C:\xampp\htdocs\RestoHelper\protected\controllers\api\CustDetailsAction.php(33): CActiveRecord->find('phone= ')
+#4 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\actions\CAction.php(76): CustDetailsAction->run()
+#5 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(308): CAction->runWithParams(Array)
+#6 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(286): CController->runAction(Object(CustDetailsAction))
+#7 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CustDetailsAction), Array)
+#8 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CWebApplication.php(282): CController->run('custDetails')
+#9 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('api/custDetails')
+#10 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\RestoHelper\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/Restohelper/index.php/api/custDetails?json=%7B%22dob%22%3A%22%22%2C%22emailID%22%3A%22%22%2C%22name%22%3A%22Johnny%20%22%2C%22phone%22%3A%22%22%7D
+---
+2018/05/02 07:37:09 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'LIMIT 1' at line 1. The SQL statement executed was: SELECT * FROM `customer` `t` WHERE phone=  LIMIT 1.
+in C:\xampp\htdocs\RestoHelper\protected\controllers\api\CustDetailsAction.php (33)
+in C:\xampp\htdocs\RestoHelper\index.php (13)
+2018/05/02 07:37:09 [error] [exception.CDbException] CDbException: CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'LIMIT 1' at line 1. The SQL statement executed was: SELECT * FROM `customer` `t` WHERE phone=  LIMIT 1 in C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\db\CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\db\ar\CActiveRecord.php(1351): CDbCommand->queryRow()
+#2 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\db\ar\CActiveRecord.php(1456): CActiveRecord->query(Object(CDbCriteria))
+#3 C:\xampp\htdocs\RestoHelper\protected\controllers\api\CustDetailsAction.php(33): CActiveRecord->find('phone= ')
+#4 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\actions\CAction.php(76): CustDetailsAction->run()
+#5 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(308): CAction->runWithParams(Array)
+#6 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(286): CController->runAction(Object(CustDetailsAction))
+#7 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CustDetailsAction), Array)
+#8 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CWebApplication.php(282): CController->run('custDetails')
+#9 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('api/custDetails')
+#10 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\RestoHelper\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/Restohelper/index.php/api/custDetails?json=%7B%22dob%22%3A%22%22%2C%22emailID%22%3A%22%22%2C%22name%22%3A%22Johnny%20%22%2C%22phone%22%3A%22%22%7D
+---
+2018/05/02 07:46:24 [error] [php] include(phone.php): failed to open stream: No such file or directory (C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\YiiBase.php:427)
+Stack trace:
+#0 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\validators\CValidator.php(186): import()
+#1 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\base\CModel.php(287): createValidator()
+#2 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\base\CModel.php(260): Customer->createValidators()
+#3 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\base\CModel.php(158): Customer->getValidators()
+#4 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\db\ar\CActiveRecord.php(805): Customer->validate()
+#5 C:\xampp\htdocs\RestoHelper\protected\controllers\api\CustDetailsAction.php(45): Customer->save()
+#6 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\actions\CAction.php(76): CustDetailsAction->run()
+#7 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(308): CustDetailsAction->runWithParams()
+#8 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(286): ApiController->runAction()
+#9 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(265): ApiController->runActionWithFilters()
+#10 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CWebApplication.php(282): ApiController->run()
+#11 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\RestoHelper\index.php(13): CWebApplication->run()
+REQUEST_URI=/Restohelper/index.php/api/custDetails?json=%7B%22dob%22%3A%22%22%2C%22emailID%22%3A%22%22%2C%22name%22%3A%22Johnny%20%22%2C%22phone%22%3A%228121155693%22%7D
+in C:\xampp\htdocs\RestoHelper\protected\controllers\api\CustDetailsAction.php (45)
+in C:\xampp\htdocs\RestoHelper\index.php (13)
+2018/05/02 08:35:59 [error] [php] include(phone.php): failed to open stream: No such file or directory (C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\YiiBase.php:427)
+Stack trace:
+#0 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\validators\CValidator.php(186): import()
+#1 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\base\CModel.php(287): createValidator()
+#2 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\base\CModel.php(260): Customer->createValidators()
+#3 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\base\CModel.php(158): Customer->getValidators()
+#4 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\db\ar\CActiveRecord.php(805): Customer->validate()
+#5 C:\xampp\htdocs\RestoHelper\protected\controllers\api\CustDetailsAction.php(46): Customer->save()
+#6 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\actions\CAction.php(76): CustDetailsAction->run()
+#7 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(308): CustDetailsAction->runWithParams()
+#8 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(286): ApiController->runAction()
+#9 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(265): ApiController->runActionWithFilters()
+#10 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CWebApplication.php(282): ApiController->run()
+#11 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\RestoHelper\index.php(13): CWebApplication->run()
+REQUEST_URI=/Restohelper/index.php/api/custDetails?json=%7B%22dob%22%3A%22%22%2C%22emailID%22%3A%22%22%2C%22name%22%3A%22Haridev%22%2C%22phone%22%3A%228121155693%22%7D
+in C:\xampp\htdocs\RestoHelper\protected\controllers\api\CustDetailsAction.php (46)
+in C:\xampp\htdocs\RestoHelper\index.php (13)
+2018/05/02 08:37:34 [error] [php] include(phone.php): failed to open stream: No such file or directory (C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\YiiBase.php:427)
+Stack trace:
+#0 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\validators\CValidator.php(186): import()
+#1 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\base\CModel.php(287): createValidator()
+#2 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\base\CModel.php(260): Customer->createValidators()
+#3 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\base\CModel.php(158): Customer->getValidators()
+#4 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\db\ar\CActiveRecord.php(805): Customer->validate()
+#5 C:\xampp\htdocs\RestoHelper\protected\controllers\api\CustDetailsAction.php(46): Customer->save()
+#6 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\actions\CAction.php(76): CustDetailsAction->run()
+#7 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(308): CustDetailsAction->runWithParams()
+#8 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(286): ApiController->runAction()
+#9 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(265): ApiController->runActionWithFilters()
+#10 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CWebApplication.php(282): ApiController->run()
+#11 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\RestoHelper\index.php(13): CWebApplication->run()
+REQUEST_URI=/Restohelper/index.php/api/custDetails?json=%7B%22dob%22%3A%22%22%2C%22emailID%22%3A%22%22%2C%22name%22%3A%22Haridev%20%22%2C%22phone%22%3A%228121155693%22%7D
+in C:\xampp\htdocs\RestoHelper\protected\controllers\api\CustDetailsAction.php (46)
+in C:\xampp\htdocs\RestoHelper\index.php (13)
+2018/05/02 08:40:41 [error] [php] include(phone.php): failed to open stream: No such file or directory (C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\YiiBase.php:427)
+Stack trace:
+#0 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\validators\CValidator.php(186): import()
+#1 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\base\CModel.php(287): createValidator()
+#2 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\base\CModel.php(260): Customer->createValidators()
+#3 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\base\CModel.php(158): Customer->getValidators()
+#4 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\db\ar\CActiveRecord.php(805): Customer->validate()
+#5 C:\xampp\htdocs\RestoHelper\protected\controllers\api\CustDetailsAction.php(46): Customer->save()
+#6 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\actions\CAction.php(76): CustDetailsAction->run()
+#7 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(308): CustDetailsAction->runWithParams()
+#8 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(286): ApiController->runAction()
+#9 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(265): ApiController->runActionWithFilters()
+#10 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CWebApplication.php(282): ApiController->run()
+#11 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\RestoHelper\index.php(13): CWebApplication->run()
+REQUEST_URI=/Restohelper/index.php/api/custDetails?json=%7B%22dob%22%3A%22%22%2C%22emailID%22%3A%22%22%2C%22name%22%3A%22Haridev%20%22%2C%22phone%22%3A%228121155693%22%7D
+in C:\xampp\htdocs\RestoHelper\protected\controllers\api\CustDetailsAction.php (46)
+in C:\xampp\htdocs\RestoHelper\index.php (13)
+2018/05/02 08:41:19 [error] [php] include(phone.php): failed to open stream: No such file or directory (C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\YiiBase.php:427)
+Stack trace:
+#0 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\validators\CValidator.php(186): import()
+#1 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\base\CModel.php(287): createValidator()
+#2 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\base\CModel.php(260): Customer->createValidators()
+#3 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\base\CModel.php(158): Customer->getValidators()
+#4 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\db\ar\CActiveRecord.php(805): Customer->validate()
+#5 C:\xampp\htdocs\RestoHelper\protected\controllers\api\CustDetailsAction.php(46): Customer->save()
+#6 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\actions\CAction.php(76): CustDetailsAction->run()
+#7 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(308): CustDetailsAction->runWithParams()
+#8 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(286): ApiController->runAction()
+#9 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(265): ApiController->runActionWithFilters()
+#10 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CWebApplication.php(282): ApiController->run()
+#11 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\RestoHelper\index.php(13): CWebApplication->run()
+REQUEST_URI=/Restohelper/index.php/api/custDetails?json=%7B%22dob%22%3A%22%22%2C%22emailID%22%3A%22%22%2C%22name%22%3A%22Haridev%20%22%2C%22phone%22%3A%228121155693%22%7D
+in C:\xampp\htdocs\RestoHelper\protected\controllers\api\CustDetailsAction.php (46)
+in C:\xampp\htdocs\RestoHelper\index.php (13)
+2018/05/02 08:41:33 [error] [php] include(phone.php): failed to open stream: No such file or directory (C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\YiiBase.php:427)
+Stack trace:
+#0 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\validators\CValidator.php(186): import()
+#1 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\base\CModel.php(287): createValidator()
+#2 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\base\CModel.php(260): Customer->createValidators()
+#3 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\base\CModel.php(158): Customer->getValidators()
+#4 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\db\ar\CActiveRecord.php(805): Customer->validate()
+#5 C:\xampp\htdocs\RestoHelper\protected\controllers\api\CustDetailsAction.php(46): Customer->save()
+#6 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\actions\CAction.php(76): CustDetailsAction->run()
+#7 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(308): CustDetailsAction->runWithParams()
+#8 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(286): ApiController->runAction()
+#9 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(265): ApiController->runActionWithFilters()
+#10 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CWebApplication.php(282): ApiController->run()
+#11 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\RestoHelper\index.php(13): CWebApplication->run()
+REQUEST_URI=/Restohelper/index.php/api/custDetails?json=%7B%22dob%22%3A%22%22%2C%22emailID%22%3A%22%22%2C%22name%22%3A%22Haridev%20%22%2C%22phone%22%3A%228121155693%22%7D
+in C:\xampp\htdocs\RestoHelper\protected\controllers\api\CustDetailsAction.php (46)
+in C:\xampp\htdocs\RestoHelper\index.php (13)
+2018/05/02 08:42:52 [error] [php] include(phone.php): failed to open stream: No such file or directory (C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\YiiBase.php:427)
+Stack trace:
+#0 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\validators\CValidator.php(186): import()
+#1 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\base\CModel.php(287): createValidator()
+#2 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\base\CModel.php(260): Customer->createValidators()
+#3 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\base\CModel.php(158): Customer->getValidators()
+#4 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\db\ar\CActiveRecord.php(805): Customer->validate()
+#5 C:\xampp\htdocs\RestoHelper\protected\controllers\api\CustDetailsAction.php(46): Customer->save()
+#6 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\actions\CAction.php(76): CustDetailsAction->run()
+#7 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(308): CustDetailsAction->runWithParams()
+#8 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(286): ApiController->runAction()
+#9 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(265): ApiController->runActionWithFilters()
+#10 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CWebApplication.php(282): ApiController->run()
+#11 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\RestoHelper\index.php(13): CWebApplication->run()
+REQUEST_URI=/Restohelper/index.php/api/custDetails?json=%7B%22dob%22%3A%22%22%2C%22emailID%22%3A%22%22%2C%22name%22%3A%22Haridev%20%22%2C%22phone%22%3A%228121155693%22%7D
+in C:\xampp\htdocs\RestoHelper\protected\controllers\api\CustDetailsAction.php (46)
+in C:\xampp\htdocs\RestoHelper\index.php (13)
+2018/05/02 08:44:29 [error] [php] include(phone.php): failed to open stream: No such file or directory (C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\YiiBase.php:427)
+Stack trace:
+#0 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\validators\CValidator.php(186): import()
+#1 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\base\CModel.php(287): createValidator()
+#2 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\base\CModel.php(260): Customer->createValidators()
+#3 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\base\CModel.php(158): Customer->getValidators()
+#4 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\db\ar\CActiveRecord.php(805): Customer->validate()
+#5 C:\xampp\htdocs\RestoHelper\protected\controllers\api\CustDetailsAction.php(56): Customer->save()
+#6 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\actions\CAction.php(76): CustDetailsAction->run()
+#7 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(308): CustDetailsAction->runWithParams()
+#8 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(286): ApiController->runAction()
+#9 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(265): ApiController->runActionWithFilters()
+#10 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CWebApplication.php(282): ApiController->run()
+#11 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\RestoHelper\index.php(13): CWebApplication->run()
+REQUEST_URI=/Restohelper/index.php/api/custDetails?json=%7B%22dob%22%3A%22%22%2C%22emailID%22%3A%22%22%2C%22name%22%3A%22Haridev%20%22%2C%22phone%22%3A%228121155693%22%7D
+in C:\xampp\htdocs\RestoHelper\protected\controllers\api\CustDetailsAction.php (56)
+in C:\xampp\htdocs\RestoHelper\index.php (13)
+2018/05/02 08:44:44 [error] [php] include(phone.php): failed to open stream: No such file or directory (C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\YiiBase.php:427)
+Stack trace:
+#0 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\validators\CValidator.php(186): import()
+#1 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\base\CModel.php(287): createValidator()
+#2 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\base\CModel.php(260): Customer->createValidators()
+#3 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\base\CModel.php(158): Customer->getValidators()
+#4 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\db\ar\CActiveRecord.php(805): Customer->validate()
+#5 C:\xampp\htdocs\RestoHelper\protected\controllers\api\CustDetailsAction.php(56): Customer->save()
+#6 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\actions\CAction.php(76): CustDetailsAction->run()
+#7 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(308): CustDetailsAction->runWithParams()
+#8 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(286): ApiController->runAction()
+#9 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(265): ApiController->runActionWithFilters()
+#10 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CWebApplication.php(282): ApiController->run()
+#11 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\RestoHelper\index.php(13): CWebApplication->run()
+REQUEST_URI=/Restohelper/index.php/api/custDetails?json=%7B%22dob%22%3A%22%22%2C%22emailID%22%3A%22%22%2C%22name%22%3A%22Haridev%20%22%2C%22phone%22%3A%228121155693%22%7D
+in C:\xampp\htdocs\RestoHelper\protected\controllers\api\CustDetailsAction.php (56)
+in C:\xampp\htdocs\RestoHelper\index.php (13)
+2018/05/02 08:45:37 [error] [php] include(phone.php): failed to open stream: No such file or directory (C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\YiiBase.php:427)
+Stack trace:
+#0 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\validators\CValidator.php(186): import()
+#1 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\base\CModel.php(287): createValidator()
+#2 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\base\CModel.php(260): Customer->createValidators()
+#3 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\base\CModel.php(158): Customer->getValidators()
+#4 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\db\ar\CActiveRecord.php(805): Customer->validate()
+#5 C:\xampp\htdocs\RestoHelper\protected\controllers\api\CustDetailsAction.php(56): Customer->save()
+#6 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\actions\CAction.php(76): CustDetailsAction->run()
+#7 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(308): CustDetailsAction->runWithParams()
+#8 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(286): ApiController->runAction()
+#9 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(265): ApiController->runActionWithFilters()
+#10 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CWebApplication.php(282): ApiController->run()
+#11 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\RestoHelper\index.php(13): CWebApplication->run()
+REQUEST_URI=/Restohelper/index.php/api/custDetails?json=%7B%22dob%22%3A%22%22%2C%22emailID%22%3A%22%22%2C%22name%22%3A%22Haridev%20%22%2C%22phone%22%3A%228121155693%22%7D
+in C:\xampp\htdocs\RestoHelper\protected\controllers\api\CustDetailsAction.php (56)
+in C:\xampp\htdocs\RestoHelper\index.php (13)
+2018/05/02 08:46:22 [error] [php] include(phone.php): failed to open stream: No such file or directory (C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\YiiBase.php:427)
+Stack trace:
+#0 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\validators\CValidator.php(186): import()
+#1 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\base\CModel.php(287): createValidator()
+#2 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\base\CModel.php(260): Customer->createValidators()
+#3 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\base\CModel.php(158): Customer->getValidators()
+#4 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\db\ar\CActiveRecord.php(805): Customer->validate()
+#5 C:\xampp\htdocs\RestoHelper\protected\controllers\api\CustDetailsAction.php(56): Customer->save()
+#6 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\actions\CAction.php(76): CustDetailsAction->run()
+#7 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(308): CustDetailsAction->runWithParams()
+#8 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(286): ApiController->runAction()
+#9 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(265): ApiController->runActionWithFilters()
+#10 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CWebApplication.php(282): ApiController->run()
+#11 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\RestoHelper\index.php(13): CWebApplication->run()
+REQUEST_URI=/Restohelper/index.php/api/custDetails?json=%7B%22dob%22%3A%22%22%2C%22emailID%22%3A%22%22%2C%22name%22%3A%22Haridev%20%22%2C%22phone%22%3A%228121155693%22%7D
+in C:\xampp\htdocs\RestoHelper\protected\controllers\api\CustDetailsAction.php (56)
+in C:\xampp\htdocs\RestoHelper\index.php (13)
+2018/05/02 08:47:42 [error] [php] include(phone.php): failed to open stream: No such file or directory (C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\YiiBase.php:427)
+Stack trace:
+#0 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\validators\CValidator.php(186): import()
+#1 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\base\CModel.php(287): createValidator()
+#2 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\base\CModel.php(260): Customer->createValidators()
+#3 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\base\CModel.php(158): Customer->getValidators()
+#4 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\db\ar\CActiveRecord.php(805): Customer->validate()
+#5 C:\xampp\htdocs\RestoHelper\protected\controllers\api\CustDetailsAction.php(56): Customer->save()
+#6 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\actions\CAction.php(76): CustDetailsAction->run()
+#7 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(308): CustDetailsAction->runWithParams()
+#8 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(286): ApiController->runAction()
+#9 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(265): ApiController->runActionWithFilters()
+#10 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CWebApplication.php(282): ApiController->run()
+#11 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\RestoHelper\index.php(13): CWebApplication->run()
+REQUEST_URI=/Restohelper/index.php/api/custDetails?json=%7B%22dob%22%3A%22%22%2C%22emailID%22%3A%22%22%2C%22name%22%3A%22Haridev%20%22%2C%22phone%22%3A%228121155693%22%7D
+in C:\xampp\htdocs\RestoHelper\protected\controllers\api\CustDetailsAction.php (56)
+in C:\xampp\htdocs\RestoHelper\index.php (13)
+2018/05/04 09:53:09 [error] [php] Undefined variable: phonenum (C:\xampp\htdocs\RestoHelper\protected\controllers\api\CustDetailsAction.php:39)
+Stack trace:
+#0 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(286): ApiController->runAction()
+#1 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(265): ApiController->runActionWithFilters()
+#2 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CWebApplication.php(282): ApiController->run()
+#3 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\RestoHelper\index.php(13): CWebApplication->run()
+REQUEST_URI=/Restohelper/index.php/api/custDetails?json=%7B%22dob%22%3A%22%22%2C%22emailID%22%3A%22%22%2C%22name%22%3A%22Haridev%20Nirgude%20%22%2C%22phone%22%3A%228121155693%22%7D
+in C:\xampp\htdocs\RestoHelper\protected\controllers\api\CustDetailsAction.php (39)
+in C:\xampp\htdocs\RestoHelper\index.php (13)
+2018/05/04 10:01:47 [error] [php] Undefined variable: phonenum (C:\xampp\htdocs\RestoHelper\protected\controllers\api\CustDetailsAction.php:39)
+Stack trace:
+#0 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(286): ApiController->runAction()
+#1 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(265): ApiController->runActionWithFilters()
+#2 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CWebApplication.php(282): ApiController->run()
+#3 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\RestoHelper\index.php(13): CWebApplication->run()
+REQUEST_URI=/Restohelper/index.php/api/custDetails?json=%7B%22dob%22%3A%22%22%2C%22emailID%22%3A%22%22%2C%22name%22%3A%22Haridev%20Nirgude%20%22%2C%22phone%22%3A%228121155695%22%7D
+in C:\xampp\htdocs\RestoHelper\protected\controllers\api\CustDetailsAction.php (39)
+in C:\xampp\htdocs\RestoHelper\index.php (13)
+2018/05/04 10:01:54 [error] [php] Undefined variable: phonenum (C:\xampp\htdocs\RestoHelper\protected\controllers\api\CustDetailsAction.php:39)
+Stack trace:
+#0 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(286): ApiController->runAction()
+#1 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(265): ApiController->runActionWithFilters()
+#2 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CWebApplication.php(282): ApiController->run()
+#3 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\RestoHelper\index.php(13): CWebApplication->run()
+REQUEST_URI=/Restohelper/index.php/api/custDetails?json=%7B%22dob%22%3A%22%22%2C%22emailID%22%3A%22%22%2C%22name%22%3A%22Haridev%20Nirgude%20%22%2C%22phone%22%3A%228121155695%22%7D
+in C:\xampp\htdocs\RestoHelper\protected\controllers\api\CustDetailsAction.php (39)
+in C:\xampp\htdocs\RestoHelper\index.php (13)
+2018/05/04 10:04:48 [error] [php] Undefined variable: phonenum (C:\xampp\htdocs\RestoHelper\protected\controllers\api\CustDetailsAction.php:39)
+Stack trace:
+#0 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(286): ApiController->runAction()
+#1 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(265): ApiController->runActionWithFilters()
+#2 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CWebApplication.php(282): ApiController->run()
+#3 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\RestoHelper\index.php(13): CWebApplication->run()
+REQUEST_URI=/Restohelper/index.php/api/custDetails?json=%7B%22dob%22%3A%22%22%2C%22emailID%22%3A%22%22%2C%22name%22%3A%22Haridev%20Nirgude%20%22%2C%22phone%22%3A%228121155695%22%7D
+in C:\xampp\htdocs\RestoHelper\protected\controllers\api\CustDetailsAction.php (39)
+in C:\xampp\htdocs\RestoHelper\index.php (13)
+2018/05/04 10:08:34 [error] [php] Undefined variable: phonenum (C:\xampp\htdocs\RestoHelper\protected\controllers\api\CustDetailsAction.php:39)
+Stack trace:
+#0 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(286): ApiController->runAction()
+#1 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(265): ApiController->runActionWithFilters()
+#2 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CWebApplication.php(282): ApiController->run()
+#3 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\RestoHelper\index.php(13): CWebApplication->run()
+REQUEST_URI=/Restohelper/index.php/api/custDetails?json=%7B%22dob%22%3A%22%22%2C%22emailID%22%3A%22%22%2C%22name%22%3A%22Haridev%20Nirgude%20%22%2C%22phone%22%3A%228121155695%22%7D
+in C:\xampp\htdocs\RestoHelper\protected\controllers\api\CustDetailsAction.php (39)
+in C:\xampp\htdocs\RestoHelper\index.php (13)
+2018/05/04 10:10:52 [error] [php] Undefined variable: phonenum (C:\xampp\htdocs\RestoHelper\protected\controllers\api\CustDetailsAction.php:39)
+Stack trace:
+#0 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(286): ApiController->runAction()
+#1 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(265): ApiController->runActionWithFilters()
+#2 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CWebApplication.php(282): ApiController->run()
+#3 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\RestoHelper\index.php(13): CWebApplication->run()
+REQUEST_URI=/Restohelper/index.php/api/custDetails?json=%7B%22dob%22%3A%22%22%2C%22emailID%22%3A%22%22%2C%22name%22%3A%22Haridev%20Nirgude%20%22%2C%22phone%22%3A%228121155692%22%7D
+in C:\xampp\htdocs\RestoHelper\protected\controllers\api\CustDetailsAction.php (39)
+in C:\xampp\htdocs\RestoHelper\index.php (13)
+2018/05/04 10:10:55 [error] [php] Undefined variable: phonenum (C:\xampp\htdocs\RestoHelper\protected\controllers\api\CustDetailsAction.php:39)
+Stack trace:
+#0 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(286): ApiController->runAction()
+#1 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(265): ApiController->runActionWithFilters()
+#2 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CWebApplication.php(282): ApiController->run()
+#3 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\RestoHelper\index.php(13): CWebApplication->run()
+REQUEST_URI=/Restohelper/index.php/api/custDetails?json=%7B%22dob%22%3A%22%22%2C%22emailID%22%3A%22%22%2C%22name%22%3A%22Haridev%20Nirgude%20%22%2C%22phone%22%3A%228121155692%22%7D
+in C:\xampp\htdocs\RestoHelper\protected\controllers\api\CustDetailsAction.php (39)
+in C:\xampp\htdocs\RestoHelper\index.php (13)
+2018/05/04 10:56:54 [error] [exception.CDbException] CDbException: The active record cannot be updated because it is new. in C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\db\ar\CActiveRecord.php:1118
+Stack trace:
+#0 C:\xampp\htdocs\RestoHelper\protected\controllers\api\CustDetailsAction.php(49): CActiveRecord->update()
+#1 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\actions\CAction.php(76): CustDetailsAction->run()
+#2 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(308): CAction->runWithParams(Array)
+#3 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(286): CController->runAction(Object(CustDetailsAction))
+#4 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CustDetailsAction), Array)
+#5 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CWebApplication.php(282): CController->run('custDetails')
+#6 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('api/custDetails')
+#7 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#8 C:\xampp\htdocs\RestoHelper\index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/Restohelper/index.php/api/custDetails?json=%7B%22dob%22%3A%22%22%2C%22emailID%22%3A%22%22%2C%22name%22%3A%22Haridev%20Nirgude%20%22%2C%22phone%22%3A%228121155692%22%7D
+---
+2018/05/04 10:57:52 [error] [exception.CDbException] CDbException: The active record cannot be updated because it is new. in C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\db\ar\CActiveRecord.php:1118
+Stack trace:
+#0 C:\xampp\htdocs\RestoHelper\protected\controllers\api\CustDetailsAction.php(49): CActiveRecord->update()
+#1 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\actions\CAction.php(76): CustDetailsAction->run()
+#2 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(308): CAction->runWithParams(Array)
+#3 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(286): CController->runAction(Object(CustDetailsAction))
+#4 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CustDetailsAction), Array)
+#5 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CWebApplication.php(282): CController->run('custDetails')
+#6 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('api/custDetails')
+#7 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#8 C:\xampp\htdocs\RestoHelper\index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/Restohelper/index.php/api/custDetails?json=%7B%22dob%22%3A%22%22%2C%22emailID%22%3A%22%22%2C%22name%22%3A%22Haridev%20Nirgude%20%22%2C%22phone%22%3A%228121155692%22%7D
+---
+2018/05/04 11:01:58 [error] [exception.CDbException] CDbException: The active record cannot be updated because it is new. in C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\db\ar\CActiveRecord.php:1118
+Stack trace:
+#0 C:\xampp\htdocs\RestoHelper\protected\controllers\api\CustDetailsAction.php(49): CActiveRecord->update()
+#1 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\actions\CAction.php(76): CustDetailsAction->run()
+#2 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(308): CAction->runWithParams(Array)
+#3 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(286): CController->runAction(Object(CustDetailsAction))
+#4 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CustDetailsAction), Array)
+#5 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CWebApplication.php(282): CController->run('custDetails')
+#6 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('api/custDetails')
+#7 C:\xampp\htdocs\RestoHelper\common\libraries\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#8 C:\xampp\htdocs\RestoHelper\index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/Restohelper/index.php/api/custDetails?json=%7B%22dob%22%3A%22%22%2C%22emailID%22%3A%22%22%2C%22name%22%3A%22Haridev%20Nirgude%20%22%2C%22phone%22%3A%228121155693%22%7D
+---
