@@ -19,9 +19,8 @@ class CustDetailsAction extends CAction
 //            
 //            
 //        ));
-        
+
         $ha=json_decode($json);
-        
         $customerdet = new Customer();
         $customerdet->name= $ha->{'name'};
         $customerdet->emailID = $ha->{'emailID'};

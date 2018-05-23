@@ -22,7 +22,8 @@ class ApiController extends Controller
             'addBooking'=>'application.controllers.api.AddBookingAction',
             'showcart'=>'application.controllers.api.ShowCartAction',
             'addHistory'=>'application.controllers.api.AddHistoryAction',
-            'custDetails'=>'application.controllers.api.CustDetailsAction'
+            'custDetails'=>'application.controllers.api.CustDetailsAction',
+            'rating'=>'application.controllers.api.RatingAction',
 
         );
     }

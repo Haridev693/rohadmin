@@ -105,6 +105,9 @@
                 array('label'=>'Bill Setting', 'url'=>array('/bill/update/1'), 'visible'=>!Yii::app()->user->isGuest),
                 //array('label'=>'History', 'url'=>array('/history/admin'), 'visible'=>!Yii::app()->user->isGuest),
                 array('label'=>'Orderings', 'url'=>array('/booking/admin'), 'visible'=>!Yii::app()->user->isGuest),
+                array('label'=>'Reports', 'url'=>array('/report/admin'), 'visible'=>!Yii::app()->user->isGuest),
+                array('label'=>'Rating', 'url'=>array('/rating/admin'), 'visible'=>!Yii::app()->user->isGuest),
+
                 array('label'=>'Feedback Queries', 'url'=>array('/query/admin'), 'visible'=>!Yii::app()->user->isGuest),
                 array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),                           
 				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
@@ -114,7 +117,8 @@
 
 </div>       
 </div> 
-
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 
 <div class="clear"></div>
   <div id="footer" class="footer">
