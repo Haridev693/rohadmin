@@ -28,9 +28,7 @@
 	'method' => 'get',
 	'action' => $this->createUrl('report/create') //,'/report/create']),
 ));
-$typedata=array(''=>'Select Type','day'=>'Day','week'=>'Week','month'=>'Month','year'=>'Year');
-$typemonth=array('2017-01'=>'2017-01','2017-02'=>'2017-02','2017-03'=>'2017-03','2017-04'=>'2017-04');
-$typeyear=array('2017-01'=>'2017-01','2017-02'=>'2017-02','2017-03'=>'2017-03','2017-04'=>'2017-04');
+$typedata=array('day'=>'Day','week'=>'Week','month'=>'Month','year'=>'Year');
 
  ?>
 
@@ -43,13 +41,12 @@ $typeyear=array('2017-01'=>'2017-01','2017-02'=>'2017-02','2017-03'=>'2017-03','
 		<div class="col-md-4">
 		<?php echo $form->error($model,'time',array('class'=>'error_position')); ?>	
 		<?php echo $form->labelEx($model,'Select Type'); ?>
-		<?php echo $form->dropDownList($model,'time',$typedata,array('onchange'=>'return muFun(this.value)')); ?>
+		<?php echo $form->dropDownList($model,'time',$typedata,array('prompt'=>'Select Type')); ?>
 		<?php echo $form->error($model,'time'); ?>
 
 		<?php echo $form->error($model,'status',array('class'=>'error_position')); ?>		
 		</div>
 		<div class="col-md-4 mtop2">
-		<div id="dateid">
         <?php echo $form->labelEx($model,'Date'); ?>
 		<?php
 		$this->widget('zii.widgets.jui.CJuiDatePicker', array(
@@ -66,6 +63,11 @@ $typeyear=array('2017-01'=>'2017-01','2017-02'=>'2017-02','2017-03'=>'2017-03','
 		));
 
 		?>
+		 <?php echo $form->error($model,'status'); ?>
+		</div>
+		<div class="col-md-4 buttons mtop2">
+		<?php echo $form->labelEx($model,'&nbsp;'); ?>
+		<?php echo CHtml::submitButton('Find'); ?>
 		</div>
 	</div>
 	
@@ -106,19 +108,5 @@ $typeyear=array('2017-01'=>'2017-01','2017-02'=>'2017-02','2017-03'=>'2017-03','
 
 ?>
 <script type="text/javascript">
-$("#month").hide();
-	function muFun(obj){
-console.log('333');		
-        if(obj=="month"){
-        $("#dateid").hide();
-		$("#month").show();
-        // document.getElementById('TLID_DIV').style.display="block"; 
-        return false;
-        }else{
-		$("#month").hide();
-//        document.getElementById('TLID_DIV').style.display="none"; 
-        return false;
-        }
-        }
-
+	
 </script>
