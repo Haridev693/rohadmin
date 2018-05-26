@@ -34,11 +34,11 @@ class Cart extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('cartId, status', 'numerical', 'integerOnly'=>true),
-			array('waiter, tableId', 'length', 'max'=>255),
+			array('waiter, tableId,month,year', 'length', 'max'=>255),
 			array('time', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, waiter, tableId, cartId, status, time', 'safe', 'on'=>'search'),
+			array('id, waiter, tableId, cartId, status, time,month,year', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -66,6 +66,8 @@ class Cart extends CActiveRecord
 			'tableId' => 'Table',
 			'cartId' => 'Cart',
 			'status' => 'Status',
+			'month' => 'Month',
+			'year' =>'Year',
 			'time' => 'Time',
 		);
 	}
@@ -94,6 +96,8 @@ class Cart extends CActiveRecord
 		$criteria->compare('cartId',$this->cartId);
 		$criteria->compare('status',$this->status);
 		$criteria->compare('time',$this->time,true);
+		$criteria->compare('month',$this->time,true);
+		$criteria->compare('year',$this->time,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

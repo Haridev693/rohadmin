@@ -28,7 +28,17 @@
 	'method' => 'get',
 	'action' => $this->createUrl('report/create') //,'/report/create']),
 ));
-$typedata=array('day'=>'Day','week'=>'Week','month'=>'Month','year'=>'Year');
+$typedata=array(''=>'Select Type','day'=>'Day','week'=>'Week','month'=>'Month','year'=>'Year');
+$typemonth=array();
+$typemonth['']='Select Type';
+for($i=0;$i<count($getallmonth);$i++){
+$typemonth[$getallmonth[$i]['date']]=$getallmonth[$i]['date'];
+}
+$typeyear=array();
+$typeyear['']='Select Type';
+for($i=0;$i<count($getallyear);$i++){
+$typeyear[$getallyear[$i]['date']]=$getallyear[$i]['date'];
+}
 
  ?>
 
@@ -41,13 +51,42 @@ $typedata=array('day'=>'Day','week'=>'Week','month'=>'Month','year'=>'Year');
 		<div class="col-md-4">
 		<?php echo $form->error($model,'time',array('class'=>'error_position')); ?>	
 		<?php echo $form->labelEx($model,'Select Type'); ?>
-		<?php echo $form->dropDownList($model,'time',$typedata,array('prompt'=>'Select Type')); ?>
+		<?php echo $form->dropDownList($model,'time',$typedata,array('onchange'=>'return muFun(this.value)')); ?>
 		<?php echo $form->error($model,'time'); ?>
 
 		<?php echo $form->error($model,'status',array('class'=>'error_position')); ?>		
 		</div>
 		<div class="col-md-4 mtop2">
+		<div id="dateid">
         <?php echo $form->labelEx($model,'Date'); ?>
+		<?php
+		$this->widget('zii.widgets.jui.CJuiDatePicker', array(
+		'model' => $model,
+		'attribute' => 'status',
+		'options' => array(
+		'dateFormat' => 'yy-mm-dd',
+//		'startView'=>'year',
+		// 'showButtonPanel'=>true,
+		// 'changeMonth'=>true,
+  //       'changeYear'=>true, // format of "2012-12-25"
+		),
+
+		));
+
+		?>
+		</div>
+		<div id="month">
+		<?php echo $form->labelEx($model,'Month'); ?>
+		<?php echo $form->dropDownList($model,'month',$typemonth); ?>
+		<?php echo $form->error($model,'status'); ?>
+		</div>
+		<div id="year">
+		<?php echo $form->labelEx($model,'Year'); ?>
+		<?php echo $form->dropDownList($model,'year',$typeyear); ?>
+		<?php echo $form->error($model,'status'); ?>
+		</div>
+
+<!--         <?php echo $form->labelEx($model,'Date'); ?>
 		<?php
 		$this->widget('zii.widgets.jui.CJuiDatePicker', array(
 		'model' => $model,
@@ -63,7 +102,7 @@ $typedata=array('day'=>'Day','week'=>'Week','month'=>'Month','year'=>'Year');
 		));
 
 		?>
-		 <?php echo $form->error($model,'status'); ?>
+ -->		 <?php echo $form->error($model,'status'); ?>
 		</div>
 		<div class="col-md-4 buttons mtop2">
 		<?php echo $form->labelEx($model,'&nbsp;'); ?>
@@ -108,5 +147,29 @@ $typedata=array('day'=>'Day','week'=>'Week','month'=>'Month','year'=>'Year');
 
 ?>
 <script type="text/javascript">
-	
+$(document).ready(function(){
+		$("#month").hide();
+		$("#year").hide();
+        
+		function muFun(obj){
+        if(obj=="month"){
+        $("#dateid").hide();
+		$("#year").hide();
+		$("#month").show();
+        // document.getElementById('TLID_DIV').style.display="block"; 
+        return false;
+        }else if(obj=="year"){
+        $("#dateid").hide();
+		$("#month").hide();
+		$("#year").show();
+
+        }else{
+		$("#dateid").show();
+		$("#month").hide();
+		$("#year").hide();
+//        document.getElementById('TLID_DIV').style.display="none"; 
+        return false;
+        }
+        }
+});
 </script>

@@ -106,9 +106,23 @@ class ReportController extends Controller
 		$dataweek="";
 		$weekdate=array();
 		$weekdata=array();
+		$getallmonth=Yii::app()->db->createCommand()
+    			->select('cart.id,DATE_FORMAT(cart.time, "%Y-%m") as date')
+   				->from('cart')
+   				   ->where("cart.status=0")
+   			   	   ->group('date')
+				   ->queryAll();
+		$getallyear=Yii::app()->db->createCommand()
+    			->select('cart.id,DATE_FORMAT(cart.time, "%Y") as date')
+   				->from('cart')
+   				   ->where("cart.status=0")
+   			   	   ->group('date')
+				   ->queryAll();
+
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 //echo date( "Y-m-d", strtotime( $_GET['Cart']['status']." -7 days " ) );
+//				   print_r($_REQUEST);
 		if(isset($_GET['Cart']))
 		{
 			$chartname=$_GET['Cart']['time'];
@@ -142,10 +156,10 @@ class ReportController extends Controller
 				$catstatus.=' To '.date( "Y-m-d", strtotime( $_GET['Cart']['status']." +6 days " ));
 
    				}
-   				if($_GET['Cart']['time']=='month' && $_GET['Cart']['status']!=""){
+   				if($_GET['Cart']['time']=='month' && $_GET['Cart']['month']!=""){
 
-   				$csmonth=date('Y-m',strtotime($_GET['Cart']['status']));
-				$cemonth=date("Y-m-t", strtotime($_GET['Cart']['status']));
+   				$csmonth=date('Y-m',strtotime($_GET['Cart']['month']));
+				$cemonth=date("Y-m-t", strtotime($_GET['Cart']['month']));
 //exit;
 
 			   	$data=$data->where("cart.time BETWEEN  '".$csmonth."-01 00:00:00' AND '".$cemonth." 23:59:00'");
@@ -162,8 +176,8 @@ class ReportController extends Controller
 				$catstatus=$csmonth.'-01 To '.$cemonth;
 
 				}
-				if($_GET['Cart']['time']=='year' && $_GET['Cart']['status']!=""){
-   				$cmonth=date('Y',strtotime($_GET['Cart']['status']));
+				if($_GET['Cart']['time']=='year' && $_GET['Cart']['year']!=""){
+   				$cmonth=$_GET['Cart']['year'];
 			   	$data=$data->where("cart.time BETWEEN  '".$cmonth."-01-01 00:00:00' AND '".$cmonth."-12-31 23:59:00'");
 				$data=$data->group('productId');
 				echo $cmonth;
@@ -185,7 +199,7 @@ class ReportController extends Controller
 				$data=$data->queryAll();
 
 			 $chartstatus=true;
-			 if($_GET['Cart']['status']!=""){
+			 if($_GET['Cart']['status']!="" || $_GET['Cart']['month']!="" || $_GET['Cart']['year']!=""){
 
 			 $chartstatus=false;
             $taxs = Tax::model()->findByPk('1');
@@ -215,7 +229,6 @@ class ReportController extends Controller
 				 	array_push($aprocount,$value['productName']);
 				 }
 			 }
-
 			 // week sales 
 			 if($dataweek!=""){
 			 foreach ($dataweek as $key => $value) {
@@ -246,6 +259,8 @@ class ReportController extends Controller
 			// 'chartweekdata'=>$av1,
 			'salesweekdate'=>$weekdate,
 			'salesweekdata'=>$weekdata,
+			'getallmonth'=>$getallmonth,
+			'getallyear'=>$getallyear,
 
 		));
 	}
@@ -319,6 +334,18 @@ class ReportController extends Controller
 		$dataweek="";
 		$weekdate=array();
 		$weekdata=array();
+		$getallmonth=Yii::app()->db->createCommand()
+    			->select('cart.id,DATE_FORMAT(cart.time, "%Y-%m") as date')
+   				->from('cart')
+   				   ->where("cart.status=0")
+   			   	   ->group('date')
+				   ->queryAll();
+		$getallyear=Yii::app()->db->createCommand()
+    			->select('cart.id,DATE_FORMAT(cart.time, "%Y") as date')
+   				->from('cart')
+   				   ->where("cart.status=0")
+   			   	   ->group('date')
+				   ->queryAll();
 
 			$chartname='day';
 			$catstatus=date('Y-m-d');
@@ -372,6 +399,8 @@ class ReportController extends Controller
 			// 'chartweekdata'=>$av1,
 			'salesweekdate'=>$weekdate,
 			'salesweekdata'=>$weekdata,
+			'getallmonth'=>$getallmonth,
+			'getallyear'=>$getallyear,
 
 		));
 // //		$model=new History;

@@ -28,7 +28,7 @@ daily weekly and monthly
 
 -->
 
-<?php  $this->renderPartial('_form', array('model'=>$model)); ?>
+<?php  $this->renderPartial('_form', array('model'=>$model,'getallmonth'=>$getallmonth,'getallyear'=>$getallyear)); ?>
 <?php 
 //echo  $chartstatus;
 // //echo $cat;
