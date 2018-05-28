@@ -13,6 +13,9 @@
 	.row .col-md-4.mtop2{
 		margin-top: 2px;
 	}
+	.ui-datepicker-calendar thead th{
+		background: #fff;
+	}
 </style>
 <div class="form">
 
@@ -59,50 +62,20 @@ $typeyear[$getallyear[$i]['date']]=$getallyear[$i]['date'];
 		<div class="col-md-4 mtop2">
 		<div id="dateid">
         <?php echo $form->labelEx($model,'Date'); ?>
-		<?php
-		$this->widget('zii.widgets.jui.CJuiDatePicker', array(
-		'model' => $model,
-		'attribute' => 'status',
-		'options' => array(
-		'dateFormat' => 'yy-mm-dd',
-//		'startView'=>'year',
-		// 'showButtonPanel'=>true,
-		// 'changeMonth'=>true,
-  //       'changeYear'=>true, // format of "2012-12-25"
-		),
+		<?php echo $form->textField($model,'status',array('size'=>20,'maxlength'=>255,'id'=>'statusdate','autocomplete' => 'off')); ?>
 
-		));
-
-		?>
 		</div>
-		<div id="month">
+		<div id="month" style="display: none;">
 		<?php echo $form->labelEx($model,'Month'); ?>
 		<?php echo $form->dropDownList($model,'month',$typemonth); ?>
 		<?php echo $form->error($model,'status'); ?>
 		</div>
-		<div id="year">
+		<div id="year" style="display: none;">
 		<?php echo $form->labelEx($model,'Year'); ?>
 		<?php echo $form->dropDownList($model,'year',$typeyear); ?>
 		<?php echo $form->error($model,'status'); ?>
 		</div>
-
-<!--         <?php echo $form->labelEx($model,'Date'); ?>
-		<?php
-		$this->widget('zii.widgets.jui.CJuiDatePicker', array(
-		'model' => $model,
-		'attribute' => 'status',
-		'options' => array(
-		'dateFormat' => 'yy-mm-dd',
-		'startView'=>'year',
-		// 'showButtonPanel'=>true,
-		// 'changeMonth'=>true,
-  //       'changeYear'=>true, // format of "2012-12-25"
-		),
-
-		));
-
-		?>
- -->		 <?php echo $form->error($model,'status'); ?>
+		 <?php echo $form->error($model,'status'); ?>
 		</div>
 		<div class="col-md-4 buttons mtop2">
 		<?php echo $form->labelEx($model,'&nbsp;'); ?>
@@ -112,64 +85,39 @@ $typeyear[$getallyear[$i]['date']]=$getallyear[$i]['date'];
 	
 <?php $this->endWidget(); ?>
 </div><!-- form -->
-<?php
-//print_r($model);
-// $abc=[
-//    'options'=>'{
-//       "title": { "text": "Fruit Consumption" },
-//       "xAxis": {
-//          "categories": ['.rtrim($cat,",").']
-//       },
-//       "yAxis": {
-//          "title": { "text": "Fruit eaten" }
-//       },
-//       "series": [
-//          { "name": "Jane", "data": ['.rtrim($chartdata,",").'] }
-//       ]
-//    }'
-// ];
-// print_r($abc);
-// $this->Widget('ext.highcharts.HighchartsWidget', [
-//    'options'=>'{
-//       "title": { "text": "Daily Chart" },
-//       "xAxis": {
-//          "categories": ['.rtrim($cat,",").']
-//       },
-//       "yAxis": {
-//          "title": { "text": "Number" }
-//       },
-//       "series": [
-//          { "name": "'.$_GET['Cart']['status'].'", "data": ['.rtrim($chartdata,",").'] }
-//       ]
-//    }'
-// ]); 
-// print_r($chartdata);
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+ <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
 
-?>
+  
+ <script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
 <script type="text/javascript">
 $(document).ready(function(){
 		$("#month").hide();
 		$("#year").hide();
-        
-		function muFun(obj){
-        if(obj=="month"){
-        $("#dateid").hide();
-		$("#year").hide();
-		$("#month").show();
-        // document.getElementById('TLID_DIV').style.display="block"; 
-        return false;
-        }else if(obj=="year"){
-        $("#dateid").hide();
-		$("#month").hide();
-		$("#year").show();
-
-        }else{
-		$("#dateid").show();
-		$("#month").hide();
-		$("#year").hide();
-//        document.getElementById('TLID_DIV').style.display="none"; 
-        return false;
-        }
-        }
+    $( "#statusdate" ).datepicker({dateFormat: 'yy-mm-dd' });
 });
+function muFun(obj){
+	console.log('dwwe');
+if(obj=="month"){
+$("#dateid").hide();
+$("#year").hide();
+$("#month").show();
+// document.getElementById('TLID_DIV').style.display="block"; 
+return false;
+}else if(obj=="year"){
+$("#dateid").hide();
+$("#month").hide();
+$("#year").show();
+
+}else{
+$("#dateid").show();
+$("#month").hide();
+$("#year").hide();
+//        document.getElementById('TLID_DIV').style.display="none"; 
+return false;
+}
+}
+  // $( function() {
+  // } );
 </script>

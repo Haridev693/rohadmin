@@ -16,7 +16,6 @@ $this->menu=array(
 
 <h1>Sales Reports</h1>
 
-
 <!-- daily sale
 
 today total sales
