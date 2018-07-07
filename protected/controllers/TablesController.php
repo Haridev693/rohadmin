@@ -16,6 +16,7 @@ class TablesController extends Controller
 		return array(
 			'accessControl', // perform access control for CRUD operations
 			'postOnly + delete', // we only allow deletion via POST request
+			'postOnly + deleteset', // we only allow deletion via POST request
 		);
 	}
 
@@ -28,15 +29,15 @@ class TablesController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
+				'actions'=>array('index','view','viewset'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
+				'actions'=>array('create','update','createset'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
+				'actions'=>array('admin','tableset','delete','deleteset'),
 				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
@@ -53,6 +54,12 @@ class TablesController extends Controller
 	{
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
+		));
+	}
+	public function actionViewset($id)
+	{
+		$this->render('viewset',array(
+			'model'=>$this->loadTabelSetModel($id),
 		));
 	}
 
@@ -76,6 +83,27 @@ class TablesController extends Controller
 		}
 
 		$this->render('create',array(
+			'model'=>$model,
+		));
+	}
+
+	public function actionCreateset()
+	{
+		$model=new Tableset;
+
+		// Uncomment the following line if AJAX validation is needed
+		// $this->performAjaxValidation($model);
+//$exception = Yii::$app->errorHandler->exception;
+		if(isset($_POST['Tableset']))
+		{
+  			 $model->attributes=$_POST['Tableset'];
+			 $model->TableId = implode(',',$_POST['TableId']);
+			 $model->Status = '1';
+			if($model->save())
+				$this->redirect(array('viewset','id'=>$model->Id));
+		}
+
+		$this->render('createset',array(
 			'model'=>$model,
 		));
 	}
@@ -117,6 +145,14 @@ class TablesController extends Controller
 		if(!isset($_GET['ajax']))
 			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
 	}
+	public function actionDeleteset($id)
+	{
+		$this->loadTabelSetModel($id)->delete();
+
+		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
+		if(!isset($_GET['ajax']))
+			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('tables/tableset'));
+	}
 
 	/**
 	 * Lists all models.
@@ -143,6 +179,17 @@ class TablesController extends Controller
 			'model'=>$model,
 		));
 	}
+	public function actionTableset()
+	{
+		$model=new Tableset('search');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['Tableset']))
+			$model->attributes=$_GET['Tableset'];
+
+		$this->render('tableset',array(
+			'model'=>$model,
+		));
+	}
 
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.
@@ -158,6 +205,15 @@ class TablesController extends Controller
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
 	}
+
+	public function loadTabelSetModel($id)
+	{
+		$model=Tableset::model()->findByPk($id);
+		if($model===null)
+			throw new CHttpException(404,'The requested page does not exist.');
+		return $model;
+	}
+
 
 	/**
 	 * Performs the AJAX validation.

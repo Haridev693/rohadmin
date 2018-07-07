@@ -10,6 +10,8 @@ $this->breadcrumbs=array(
 $this->menu=array(
 	//array('label'=>'List Waiter', 'url'=>array('index')),
 	array('label'=>'Create Waiter', 'url'=>array('create')),
+	array('label'=>'Assign Table Set', 'url'=>array('assigncreate')),
+	array('label'=>'Manage Assign Table Set', 'url'=>array('adminassign')),
 );
 
 Yii::app()->clientScript->registerScript('search', "

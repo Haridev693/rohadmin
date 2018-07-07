@@ -70,6 +70,15 @@ $('.search-form form').submit(function(){
                 },
             'filter' => CHtml::listData(Category::model()->findAll(),'id','Name')
         ),
+        array(
+            'header'=>'Total Quantity ',
+            'name'=>'Totalqty',
+            'type'=>'raw',
+            'value'=>function ($data)
+          	{
+          			return $data->Totalqty;
+          	}
+         ),
 		array(
 			'class'=>'CButtonColumn',
 		),

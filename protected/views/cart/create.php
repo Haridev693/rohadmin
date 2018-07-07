@@ -8,7 +8,7 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	//array('label'=>'List Cart', 'url'=>array('index')),
+	array('label'=>'Cart', 'url'=>array('cart')),
 	//array('label'=>'Manage Cart', 'url'=>array('admin')),
 );
 ?>

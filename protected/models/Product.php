@@ -32,13 +32,13 @@ class Product extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-            array('Code, Price, Name, CategoryId', 'required'),
+            array('Code, Price, Name, CategoryId,Stockstatus', 'required'),
             array('Code, NumberName', 'numerical', 'integerOnly'=>true),
             //array('Price', 'numerical'),
-            array('Name, CategoryId,Price', 'length', 'max'=>255),
+            array('Name, CategoryId,Price,Totalqty', 'length', 'max'=>255),
             // The following rule is used by search().
             // @todo Please remove those attributes that should not be searched.
-            array('Id, Code, Price, NumberName, Name, CategoryId', 'safe', 'on'=>'search'),
+            array('Id, Code, Price, NumberName, Name, CategoryId,Totalqty,Stockstatus', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -65,6 +65,8 @@ class Product extends CActiveRecord
 			'Price' => 'Price',
 			'NumberName' => 'Number Name',
 			'Name' => 'Name',
+			'Totalqty'=>'Total Quantity',
+			'Stockstatus'=>'Stock Status',
 			'CategoryId' => 'Category Id',
 		);
 	}
@@ -93,6 +95,8 @@ class Product extends CActiveRecord
 		$criteria->compare('NumberName',$this->NumberName,true);
 		$criteria->compare('Name',$this->Name,true);
 		$criteria->compare('CategoryId',$this->CategoryId,true);
+		$criteria->compare('Totalqty',$this->Totalqty,true);
+		$criteria->compare('Stockstatus',$this->Stockstatus,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

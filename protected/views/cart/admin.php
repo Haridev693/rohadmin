@@ -9,7 +9,7 @@ $this->breadcrumbs=array(
 
 $this->menu=array(
 	//array('label'=>'List Bills', 'url'=>array('index')),
-	//array('label'=>'Create Cart', 'url'=>array('create')),
+	array('label'=>'Create Order', 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -107,7 +107,18 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
                     return 'Ordering';
             },
             'filter' => array(0=>'Finished',1=>'Ordering')
+        ),array(
+            'header'=>'Order Type',
+            //'labels'=>'Order Type',
+            'name'=>'type',
+            'type'=>'raw',
+            'value'=>function($data)
+            {
+                return $data->type;
+            },
+            // 'filter' => array(0=>'Finished',1=>'Ordering')
         ),
+//        'type',
        /* array(
         'header'=>'Time',
        // 'name'=>'time',

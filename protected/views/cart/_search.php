@@ -36,6 +36,10 @@
 		<?php echo $form->dropDownList($model,'status',array(1=>'Ordering',0=>'Finished'),array('prompt'=>'---Select---')); ?>
 
 	</div>
+	<div class="row">
+		<?php echo $form->label($model,'Order Type'); ?>
+		<?php echo $form->textField($model,'type'); ?>
+	</div>
 
 	<div class="row buttons" style="margin-left: 110px">
 		<?php echo CHtml::submitButton('Search',array('style'=>'width:337px')); ?>

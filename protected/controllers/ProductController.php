@@ -70,6 +70,10 @@ class ProductController extends Controller
 		if(isset($_POST['Product']))
 		{
 			$model->attributes=$_POST['Product'];
+			$model->Totalqty='0';
+			if($_POST['Product']['Stockstatus']=='0'){
+				$model->Totalqty='-1';
+			}
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->Id));
 		}
@@ -94,6 +98,10 @@ class ProductController extends Controller
 		if(isset($_POST['Product']))
 		{
 			$model->attributes=$_POST['Product'];
+			$model->Totalqty='0';
+			if($_POST['Product']['Stockstatus']=='0'){
+				$model->Totalqty='-1';
+			}
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->Id));
 		}

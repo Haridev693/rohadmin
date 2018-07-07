@@ -28,15 +28,15 @@ class LoginController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
+				'actions'=>array('index','view','viewassign'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','changePassword'),
+				'actions'=>array('create','update','changePassword','assigncreate'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
+				'actions'=>array('admin','delete','adminassign','deleteassign'),
 				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
@@ -53,6 +53,12 @@ class LoginController extends Controller
 	{
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
+		));
+	}
+	public function actionViewassign($id)
+	{
+		$this->render('viewassign',array(
+			'model'=>$this->loadAssignTableModel($id),
 		));
 	}
 
@@ -75,6 +81,24 @@ class LoginController extends Controller
 		}
 
 		$this->render('create',array(
+			'model'=>$model,
+		));
+	}
+	public function actionAssigncreate()
+	{
+		$model=new Assigntable;
+
+		// Uncomment the following line if AJAX validation is needed
+		// $this->performAjaxValidation($model);
+
+		if(isset($_POST['Assigntable']))
+		{
+			$model->attributes=$_POST['Assigntable'];
+			if($model->save())
+				$this->redirect(array('viewassign','id'=>$model->Id));
+		}
+
+		$this->render('assigncreate',array(
 			'model'=>$model,
 		));
 	}
@@ -116,6 +140,14 @@ class LoginController extends Controller
 		if(!isset($_GET['ajax']))
 			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
 	}
+	public function actionDeleteassign($id)
+	{
+		$this->loadAssignTableModel($id)->delete();
+
+		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
+		if(!isset($_GET['ajax']))
+			$this->redirect(array('login/adminassign'));
+	}
 
 	/**
 	 * Lists all models.
@@ -143,6 +175,18 @@ class LoginController extends Controller
 		));
 	}
 
+	public function actionAdminassign()
+	{
+		$model=new Assigntable('search');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['Assigntable']))
+			$model->attributes=$_GET['Assigntable'];
+
+		$this->render('adminassign',array(
+			'model'=>$model,
+		));
+	}
+
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
@@ -157,6 +201,15 @@ class LoginController extends Controller
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
 	}
+
+	public function loadAssignTableModel($id)
+	{
+		$model=Assigntable::model()->findByPk($id);
+		if($model===null)
+			throw new CHttpException(404,'The requested page does not exist.');
+		return $model;
+	}
+
 
     public function actionChangePassword()
     {

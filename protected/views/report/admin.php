@@ -43,6 +43,22 @@ if($chartstatus=="" && empty($cat) && $chartdata==""){
 <h4>No Record Found</h4>
 </div>
 <?php
+}else{
+  if(isset($_GET['Cart'])){
+  ?>
+<div class="clear"></div>
+<div class="row" style="margin-left:10px;">
+<h4>
+<?php 
+ echo CHtml::link('Download Report',array('report/createpdf',
+                                         'Cart[time]'=>isset($_GET['Cart']['time']) ? $_GET['Cart']['time'] : '',
+                                         'Cart[status]'=>isset($_GET['Cart']['status']) ? $_GET['Cart']['status'] : '',
+                                         'Cart[month]'=>isset($_GET['Cart']['month']) ? $_GET['Cart']['month'] : '',
+                                         'Cart[year]'=>isset($_GET['Cart']['year']) ? $_GET['Cart']['year'] : '',
+                                         ), array('target'=>'_blank')); ?>
+                                         </h4></div>
+<?php
+}
 }
 ?>
 
@@ -51,6 +67,11 @@ if($chartstatus=="" && empty($cat) && $chartdata==""){
 if($cat!="" && $chartdata!="" && $chartname=='day'){
 
 $this->Widget('ext.highcharts.HighchartsWidget', [  
+    'scripts' => array(
+     'highcharts-more',   // enables supplementary chart types (gauge, arearange, columnrange, etc.)
+     'modules/exporting', // adds Exporting button/menu to chart
+//     'themes/grid'        // applies global 'grid' theme to all charts
+),
    'options'=>"{
       title: { 'text': 'Daily Chart - Total Sales :".$hinumber."' },
       xAxis: {
@@ -66,6 +87,15 @@ $this->Widget('ext.highcharts.HighchartsWidget', [
     shared: true,
     useHTML: true
   },
+  plotOptions: {
+    line: {
+            dataLabels: {
+                enabled: true
+            },
+            enableMouseTracking: false
+        }
+   
+  },
       series: [
          { 'name': '".$catstatus."', 'data': [".rtrim($chartdata,',')."] }
       ]
@@ -77,6 +107,12 @@ $this->Widget('ext.highcharts.HighchartsWidget', [
 if($cat!="" && $chartname=='week'){
 
 $this->Widget("ext.highcharts.HighchartsWidget", [
+  'scripts' => array(
+     'highcharts-more',   // enables supplementary chart types (gauge, arearange, columnrange, etc.)
+     'modules/exporting', // adds Exporting button/menu to chart
+//     'themes/grid'        // applies global 'grid' theme to all charts
+),
+  
    "options"=>"{
   chart: {
     type: 'column'
@@ -92,23 +128,26 @@ $this->Widget("ext.highcharts.HighchartsWidget", [
     crosshair: true
   },
   yAxis: {
-    min: 0,
+    
     title: {
       text: 'Sales in numbers '
-    }
+    },
+   
   },
-  tooltip: {
-    headerFormat: '<span style='font-size:10px;width:300px'>{point.key}</span><table>',
-    pointFormat: '<tr><td style='color:{series.color};padding:0'> </td> <td style='padding:0'><b>{point.y:.1f} </b></td></tr>',
-    footerFormat: '</table>',
-    shared: true,
-    useHTML: true
-  },
-  plotOptions: {
-    column: {
-      pointPadding: 0.2,
-      borderWidth: 0
-    }
+    tooltip: {
+        headerFormat: '<span style='font-size:11px'>{point.key}</span><br>',
+        pointFormat: '<span style='color:{point.color}'>Total : </span><b>{point.y}</b><br/>'
+    },
+    plotOptions: {
+        series: {
+            borderWidth: 0,
+            dataLabels: {
+                enabled: true,
+                format: '{point.y}'
+            }
+        }
+    },
+   
   },
   series: [{
         name: '".$catstatus."',
@@ -120,7 +159,13 @@ $this->Widget("ext.highcharts.HighchartsWidget", [
 <br/><br/>
 <?php
 $this->Widget('ext.highcharts.HighchartsWidget', [
+    'scripts' => array(
+     'highcharts-more',   // enables supplementary chart types (gauge, arearange, columnrange, etc.)
+     'modules/exporting', // adds Exporting button/menu to chart
+//     'themes/grid'        // applies global 'grid' theme to all charts
+),
    'options'=>"{
+
       title: { 'text': 'Weekly Sales' },
       xAxis: {
          categories: ['".implode("','", $salesweekdate)."']
@@ -135,6 +180,15 @@ $this->Widget('ext.highcharts.HighchartsWidget', [
     shared: true,
     useHTML: true
   },
+   plotOptions: {
+    line: {
+            dataLabels: {
+                enabled: true
+            },
+            enableMouseTracking: false
+        }
+   
+  },
       series: [
          { 'name': '".$catstatus."', 'data': [".implode(",", $salesweekdata)."] }
       ]
@@ -145,6 +199,11 @@ $this->Widget('ext.highcharts.HighchartsWidget', [
 if($cat!="" && $chartname=='month'){
 
 $this->Widget("ext.highcharts.HighchartsWidget", [
+    'scripts' => array(
+     'highcharts-more',   // enables supplementary chart types (gauge, arearange, columnrange, etc.)
+     'modules/exporting', // adds Exporting button/menu to chart
+//     'themes/grid'        // applies global 'grid' theme to all charts
+),
    "options"=>"{
   chart: {
     type: 'column'
@@ -160,24 +219,24 @@ $this->Widget("ext.highcharts.HighchartsWidget", [
     crosshair: true
   },
   yAxis: {
-    min: 0,
+   
     title: {
       text: 'Sales in numbers '
     }
   },
   tooltip: {
-    headerFormat: '<span style='font-size:10px;width:300px'>{point.key}</span><table>',
-    pointFormat: '<tr><td style='color:{series.color};padding:0'> </td> <td style='padding:0'><b>{point.y:.1f} </b></td></tr>',
-    footerFormat: '</table>',
-    shared: true,
-    useHTML: true
-  },
-  plotOptions: {
-    column: {
-      pointPadding: 0.2,
-      borderWidth: 0
-    }
-  },
+        headerFormat: '<span style='font-size:11px'>{point.key}</span><br>',
+        pointFormat: '<span style='color:{point.color}'>Total : </span><b>{point.y}</b><br/>'
+    },
+    plotOptions: {
+        series: {
+            borderWidth: 0,
+            dataLabels: {
+                enabled: true,
+                format: '{point.y}'
+            }
+        }
+    },
   series: [{
         name: '".$catstatus."',
         data: [".rtrim($chartdata,',')."]
@@ -188,6 +247,11 @@ $this->Widget("ext.highcharts.HighchartsWidget", [
 <br/><br/>
 <?php
 $this->Widget('ext.highcharts.HighchartsWidget', [
+    'scripts' => array(
+     'highcharts-more',   // enables supplementary chart types (gauge, arearange, columnrange, etc.)
+     'modules/exporting', // adds Exporting button/menu to chart
+//     'themes/grid'        // applies global 'grid' theme to all charts
+),
    'options'=>"{
       title: { 'text': 'Monthly Sales' },
       xAxis: {
@@ -203,6 +267,15 @@ $this->Widget('ext.highcharts.HighchartsWidget', [
     shared: true,
     useHTML: true
   },
+  plotOptions: {
+    line: {
+            dataLabels: {
+                enabled: true
+            },
+            enableMouseTracking: false
+        }
+   
+  },
       series: [
          { 'name': '".$catstatus."', 'data': [".implode(",", $salesweekdata)."] }
       ]
@@ -213,6 +286,11 @@ $this->Widget('ext.highcharts.HighchartsWidget', [
 if($cat!="" && $chartname=='year'){
 
 $this->Widget("ext.highcharts.HighchartsWidget", [
+    'scripts' => array(
+     'highcharts-more',   // enables supplementary chart types (gauge, arearange, columnrange, etc.)
+     'modules/exporting', // adds Exporting button/menu to chart
+//     'themes/grid'        // applies global 'grid' theme to all charts
+),
    "options"=>"{
   chart: {
     type: 'column'
@@ -228,24 +306,24 @@ $this->Widget("ext.highcharts.HighchartsWidget", [
     crosshair: true
   },
   yAxis: {
-    min: 0,
+    
     title: {
       text: 'Sales in numbers '
     }
   },
-  tooltip: {
-    headerFormat: '<span style='font-size:10px;width:300px'>{point.key}</span><table>',
-    pointFormat: '<tr><td style='color:{series.color};padding:0'> </td> <td style='padding:0'><b>{point.y:.1f} </b></td></tr>',
-    footerFormat: '</table>',
-    shared: true,
-    useHTML: true
-  },
-  plotOptions: {
-    column: {
-      pointPadding: 0.2,
-      borderWidth: 0
-    }
-  },
+ tooltip: {
+        headerFormat: '<span style='font-size:11px'>{point.key}</span><br>',
+        pointFormat: '<span style='color:{point.color}'>Total : </span><b>{point.y}</b><br/>'
+    },
+    plotOptions: {
+        series: {
+            borderWidth: 0,
+            dataLabels: {
+                enabled: true,
+                format: '{point.y}'
+            }
+        }
+    },
   series: [{
         name: '".$catstatus."',
         data: [".rtrim($chartdata,',')."]
@@ -256,6 +334,11 @@ $this->Widget("ext.highcharts.HighchartsWidget", [
 <br/><br/>
 <?php
 $this->Widget('ext.highcharts.HighchartsWidget', [
+    'scripts' => array(
+     'highcharts-more',   // enables supplementary chart types (gauge, arearange, columnrange, etc.)
+     'modules/exporting', // adds Exporting button/menu to chart
+//     'themes/grid'        // applies global 'grid' theme to all charts
+),
    'options'=>"{
       title: { 'text': 'Yearly Sales' },
       xAxis: {
@@ -270,6 +353,15 @@ $this->Widget('ext.highcharts.HighchartsWidget', [
     footerFormat: '</table>',
     shared: true,
     useHTML: true
+  },
+  plotOptions: {
+    line: {
+            dataLabels: {
+                enabled: true
+            },
+            enableMouseTracking: false
+        }
+   
   },
       series: [
          { 'name': '".$catstatus."', 'data': [".implode(",", $salesweekdata)."] }

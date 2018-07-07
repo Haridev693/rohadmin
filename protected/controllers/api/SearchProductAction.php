@@ -23,7 +23,8 @@ class SearchProductAction extends CAction
                 'price'=>doubleval($item->Price),
                 'numbername'=>intval($item->NumberName),
                 'name'=>$item->Name,
-                'categoryId'=>$item->CategoryId
+                'categoryId'=>$item->CategoryId,
+                'Totalqty'=>intval($item->Totalqty),
             );
         }
 

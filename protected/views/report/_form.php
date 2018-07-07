@@ -86,8 +86,6 @@ $typeyear[$getallyear[$i]['date']]=$getallyear[$i]['date'];
 <?php $this->endWidget(); ?>
 </div><!-- form -->
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
- <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
-
   
  <script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
@@ -98,12 +96,10 @@ $(document).ready(function(){
     $( "#statusdate" ).datepicker({dateFormat: 'yy-mm-dd' });
 });
 function muFun(obj){
-	console.log('dwwe');
 if(obj=="month"){
 $("#dateid").hide();
 $("#year").hide();
 $("#month").show();
-// document.getElementById('TLID_DIV').style.display="block"; 
 return false;
 }else if(obj=="year"){
 $("#dateid").hide();
@@ -114,10 +110,8 @@ $("#year").show();
 $("#dateid").show();
 $("#month").hide();
 $("#year").hide();
-//        document.getElementById('TLID_DIV').style.display="none"; 
+
 return false;
 }
 }
-  // $( function() {
-  // } );
 </script>

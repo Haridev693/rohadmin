@@ -10,6 +10,8 @@ $this->breadcrumbs=array(
 $this->menu=array(
     //array('label'=>'List Tables', 'url'=>array('index')),
     array('label'=>'Create Tables', 'url'=>array('create')),
+    array('label'=>'Create Tables Set', 'url'=>array('createset')),
+    array('label'=>'Manage Tables Set', 'url'=>array('tableset')),
 );
 
 Yii::app()->clientScript->registerScript('search', "

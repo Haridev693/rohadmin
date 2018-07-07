@@ -9,6 +9,7 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/screen.css" media="screen, projection" />
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/print.css" media="print" />
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/bootstrap.min.css" media="all">
+   
 	<!--[if lt IE 8]>
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/ie.css" media="screen, projection" />
 	<![endif]-->
@@ -16,6 +17,7 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main.css" />
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/gridview.css" />
+    <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery-3.3.1.js"></script>
 
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 </head>
@@ -96,19 +98,45 @@
 			'items'=>array(
 				array('label'=>'Home', 'url'=>array('/site/index')),
 				//array('label'=>'Contact', 'url'=>array('/site/contact'), 'visible'=>Yii::app()->user->isGuest),
+
                 array('label'=>'Waiters', 'url'=>array('/login/admin'), 'visible'=>!Yii::app()->user->isGuest),
                 array('label'=>'Tables', 'url'=>array('/tables/admin'), 'visible'=>!Yii::app()->user->isGuest),
                 array('label'=>'Categories', 'url'=>array('/category/admin'), 'visible'=>!Yii::app()->user->isGuest),
                 array('label'=>'Products', 'url'=>array('/product/admin'), 'visible'=>!Yii::app()->user->isGuest),
+                array('label'=>'Manage Stock', 'url'=>array('/stock/admin'), 'visible'=>!Yii::app()->user->isGuest),
+                // array('label'=>'Food Company', 'url'=>array('/foodcompany/admin'), 'visible'=>!Yii::app()->user->isGuest),
                 array('label'=>'Bills', 'url'=>array('/cart/admin'), 'visible'=>!Yii::app()->user->isGuest),
-                array('label'=>'Tax Setting', 'url'=>array('/tax/update/1'), 'visible'=>!Yii::app()->user->isGuest),
-                array('label'=>'Bill Setting', 'url'=>array('/bill/update/1'), 'visible'=>!Yii::app()->user->isGuest),
+                // array('label'=>'Tax Setting', 'url'=>array('/tax/update/1'), 'visible'=>!Yii::app()->user->isGuest),
+                // array('label'=>'Bill Setting', 'url'=>array('/bill/update/1'), 'visible'=>!Yii::app()->user->isGuest),
+
+                 array(
+      'label'=>'Settings',
+     'url'=>'javascript:void(0);',
+    'linkOptions'=>array('id'=>'Settings'),
+      'itemOptions'=>array('id'=>'Settings'),
+      'items'=>array(
+        array('label'=>'Bill Settings', 'url'=>array('/bill/update/1'),'visible'=>!Yii::app()->user->isGuest),
+        array('label'=>'Tax Settings', 'url'=>array('/tax/update/1'),'visible'=>!Yii::app()->user->isGuest),
+        array('label'=>'Sales Type', 'url'=>array('/foodcompany/admin','visible'=>!Yii::app()->user->isGuest))
+      ),'visible'=>!Yii::app()->user->isGuest
+    ),
                 //array('label'=>'History', 'url'=>array('/history/admin'), 'visible'=>!Yii::app()->user->isGuest),
                 array('label'=>'Orderings', 'url'=>array('/booking/admin'), 'visible'=>!Yii::app()->user->isGuest),
                 array('label'=>'Reports', 'url'=>array('/report/admin'), 'visible'=>!Yii::app()->user->isGuest),
-                array('label'=>'Rating', 'url'=>array('/rating/admin'), 'visible'=>!Yii::app()->user->isGuest),
+  //              array('label'=>'Rating', 'url'=>array('/rating/admin'), 'visible'=>!Yii::app()->user->isGuest),
+                array('label'=>'Reservation', 'url'=>array('/reservation/admin'), 'visible'=>!Yii::app()->user->isGuest),
 
-                array('label'=>'Feedback Queries', 'url'=>array('/query/admin'), 'visible'=>!Yii::app()->user->isGuest),
+     array(
+      'label'=>'Feedback System',
+    'url'=>'javascript:void(0);',
+    'linkOptions'=>array('id'=>'Feedback'),
+      'itemOptions'=>array('id'=>'Feedback'),
+      'items'=>array(
+        array('label'=>'Rating', 'url'=>array('/rating/admin'),'visible'=>!Yii::app()->user->isGuest),
+        array('label'=>'Feedback Queries', 'url'=>array('/query/admin'),'visible'=>!Yii::app()->user->isGuest),
+      ),'visible'=>!Yii::app()->user->isGuest
+    ),
+//                array('label'=>'Feedback Queries', 'url'=>array('/query/admin'), 'visible'=>!Yii::app()->user->isGuest),
                 array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),                           
 				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
 				),

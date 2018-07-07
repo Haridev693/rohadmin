@@ -15,6 +15,7 @@ class AddBookingAction extends CAction
         //echo $json;exit;
         $ha=json_decode($json);
 
+
         $date = strtotime('Now');
         //echo $cartId;exit;
         //echo date('Y-m-d H:i:s',$cartId);exit;
@@ -50,7 +51,7 @@ class AddBookingAction extends CAction
             }
 
            
-            //add new cart
+   //          //add new cart
 
             $productName =  $item->{'cartName'};
             $productId =  $item->{'productId'};
@@ -69,6 +70,17 @@ class AddBookingAction extends CAction
             $newComment->cartId = $cartId;
             $newComment->dateCreated = $date;
             $newComment->save();
+
+                $findproduct = Product::model()->findByPk($productId);
+                // // print_r($findproduct['Totalqty']);
+                if($findproduct['Totalqty']!=-1 &&  $findproduct['Totalqty']!='' && $findproduct['Totalqty']!=0 ){
+
+                $connection=Yii::app()->db;
+                $sql = "UPDATE product SET Totalqty = Totalqty - ".$numberCart." WHERE Id = ".$productId;
+                $command = $connection->createCommand($sql);
+                $command->execute();
+
+                }
         }
         ApiController::sendResponse(200, CJSON::encode(array(
             'status' => 'SUCCESS',

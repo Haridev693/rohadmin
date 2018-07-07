@@ -28,7 +28,7 @@ $this->widget('zii.widgets.CDetailView', array(
 		'id',
 		'waiter',
 		'tableId',
-		'cartId',
+        'cartId',
         array(
             'header'=>'Status',
             'name'=>'status',
@@ -40,6 +40,19 @@ $this->widget('zii.widgets.CDetailView', array(
                         return 'Finished';
                     else
                         return 'Ordering';
+                }
+        ),
+        array(
+            'label'=>'Order Type',
+            'name'=>'type',
+            'type'=>'raw',
+            'value'=>function($data)
+                {
+                    $ha=$data->type;
+                    if($ha == '')
+                        return '';
+                    else
+                        return ucfirst($ha);
                 }
         ),
         array(

@@ -14,6 +14,7 @@
 	// See class documentation of CActiveForm for details on this.
 	'enableAjaxValidation'=>false,
 )); ?>
+<?php $typedata=array(''=>'Select Stock','0'=>'Unlimited','1'=>'Limited'); ?>
 
 	<p class="note">Fields with <span class="required">*</span> are required.</p>
 
@@ -47,6 +48,12 @@
 		<?php echo $form->labelEx($model,'Category'); ?>
 		<?php echo $form->dropDownList($model,'CategoryId',CHtml::listData(Category::model()->findAll(),'id','Name'),array('prompt'=>'Select Category','style'=>'width:337px')); ?>
 		<?php echo $form->error($model,'CategoryId'); ?>
+	</div>
+	<div class="row">
+
+		<?php echo $form->labelEx($model,'Stockstatus'); ?>
+		<?php echo $form->dropDownList($model,'Stockstatus',$typedata,array('style'=>'width:337px')); ?>
+		<?php echo $form->error($model,'Stockstatus'); ?>
 	</div>
 
 	<div class="row buttons">

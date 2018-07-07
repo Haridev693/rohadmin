@@ -2,7 +2,6 @@
 /* @var $this CartController */
 /* @var $data Cart */
 ?>
-
 <div class="view">
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('id')); ?>:</b>
