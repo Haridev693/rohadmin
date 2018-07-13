@@ -10,7 +10,7 @@ class ShowTablesAction extends CAction
     public function run()
     {
         $id = isset($_REQUEST['id']) ? $_REQUEST['id'] : '';
-        $data="";
+        // $data="";
         if(strlen($id)==0)
         {
             $log = Tables::model()->findAll();
