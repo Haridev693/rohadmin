@@ -59,6 +59,8 @@ $this->menu=array(
 
 $srno=1;
 $subtotal=0;
+
+$disablebtn=false;
 foreach($model as $cart){
 
  	if($srno % 2 == 0){ $class='event'; }else{ $class="odd"; } 
@@ -68,7 +70,26 @@ foreach($model as $cart){
 		<td><?php echo $cart['productName']; ?></td>
 		<td class="text-right"><?php echo $cart['price']; ?></td>
 		<td class="text-right"> 
-		<?php echo $cart['number'];?></td>
+		<?php echo $cart['number'];
+			// check qty 
+			$product=Product::model()->find(array("condition"=>"Id =".$cart['productId']));
+			$maxval=$product->Totalqty;
+			if($maxval==-1){
+				$maxval='';
+			}
+			$textboxdiable=true;
+			$textboxalert='<div class="txt-qtyalert"><b> Quantity Not Avaible<b></div>';
+			if($maxval >= $cart['number'] || $maxval==''){
+				$textboxalert="";
+				$textboxdiable=false;
+			}
+			// disable text box;
+			if($textboxalert!='' && $disablebtn==false){
+		
+				$disablebtn=true;
+			}
+			echo $textboxalert; 
+		?></td>
 		<td class="text-right"><?php echo $totalprice=$cart['price']* $cart['number']; ?></td>
 	</tr>
 <?php
@@ -121,7 +142,7 @@ $stotalTax=($subtotal*$totaltax)/100;
 		<th colspan="1">	
 			<div class="row buttons">
 			<?php // echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
-		    <?php echo CHtml::Button('Place Order',array('onclick'=>"window.location.href = '" . Yii::app()->createAbsoluteUrl("cart/placeorder"). "';")); ?></div>
+		    <?php echo CHtml::Button('Place Order',array('onclick'=>"window.location.href = '" . Yii::app()->createAbsoluteUrl("cart/placeorder"). "';","disabled"=>$disablebtn)); ?></div>
 		</th>
 
 	</tr>

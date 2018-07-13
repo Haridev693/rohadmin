@@ -61,8 +61,8 @@ if($model){
 
 $srno=1;
 $subtotal=0;
+$disablebtn=false;
 foreach($model as $cart){
-
  	if($srno % 2 == 0){ $class='event'; }else{ $class="odd"; } 
 ?>
 	<tr class="<?php echo $class; ?>">
@@ -70,7 +70,28 @@ foreach($model as $cart){
 		<td><?php echo $cart['productName']; ?></td>
 		<td class="text-right"><?php echo $cart['price']; ?></td>
 		<td class="text-right"> 
-		<?php echo CHtml::numberField('qty['.$cart["id"].']', $cart['number'],['class' => 'form-control qtywidth']); ?></td>
+		<?php
+			// check qty 
+			$product=Product::model()->find(array("condition"=>"Id =".$cart['productId']));
+			$maxval=$product->Totalqty;
+			if($maxval==-1){
+				$maxval='';
+			}
+			$textboxdiable=true;
+			$textboxalert='<div class="txt-qtyalert"><b> Quantity Not Avaible<b></div>';
+			if($maxval >= $cart['number'] || $maxval==''){
+				$textboxalert="";
+				$textboxdiable=false;
+			}
+			// disable text box;
+			if($textboxalert!='' && $disablebtn==false){
+		
+				$disablebtn=true;
+			}			
+
+		 echo CHtml::numberField('qty['.$cart["id"].']', $cart['number'],['class' => 'form-control qtywidth',"min"=>"1",'onchange'=>"return qtyvalidation(this.value,".$product->Totalqty.",".$cart["id"].")","max"=>$maxval]); echo $textboxalert; ?>
+
+		</td>
 		<td class="text-right"><?php echo $totalprice=$cart['price']* $cart['number']; ?></td>
 		<td class="text-right"><?php  echo CHtml::link('Delete', $this->createAbsoluteUrl('cart/cartdelete',array('id'=>$cart['id'])));  ?></td>
 	</tr>
@@ -127,7 +148,7 @@ $stotalTax=($subtotal*$totaltax)/100;
 		<th colspan="1">	
 			
 			<?php // echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
-		    <?php echo CHtml::Button('Checkout',array('onclick'=>"window.location.href = '" . Yii::app()->createAbsoluteUrl("cart/checkout"). "';")); ?>
+		    <?php echo CHtml::Button('Checkout',array('onclick'=>"window.location.href = '" . Yii::app()->createAbsoluteUrl("cart/checkout"). "';","disabled"=>$disablebtn)); ?>
 		</th>
 
 	</tr>
@@ -146,3 +167,10 @@ $stotalTax=($subtotal*$totaltax)/100;
 	</tr>
 </table>
 	<?php }?>
+<script type="text/javascript">
+	function qtyvalidation($val,$maxval,$id){
+	if($val > $maxval && $maxval!=-1){
+		$("#qty_"+$id).val($maxval);
+	}
+}
+</script>

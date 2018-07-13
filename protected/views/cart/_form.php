@@ -55,6 +55,10 @@
 		width: 50px !important;
 		min-width: 50px !important;
 	}
+	.txt-qtyalert{
+		width: 325px;
+		text-align: center;
+	}
 
 </style>
 
@@ -132,6 +136,11 @@
 <script type="text/javascript">
 $("#foodcompany").hide();
 $("#salestype").hide();
+function qtyvalidation($val,$maxval,$id){
+	if($val > $maxval && $maxval!=-1){
+		$("#qty_"+$id).val($maxval);
+	}
+}
 function muFun(obj){
 if(obj=="online"){
 $("#foodcompany").show();

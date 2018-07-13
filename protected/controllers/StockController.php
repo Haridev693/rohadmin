@@ -148,6 +148,10 @@ class StockController extends Controller
 				$Totalqty= '-1';
 			}else{
 				$Totalqty=$product->Totalqty - $qty;
+						if($Totalqty < 0){
+								$Totalqty=0;
+						}
+
 			}
 			$update = Yii::app()->db->createCommand()
 		    ->update('product', 

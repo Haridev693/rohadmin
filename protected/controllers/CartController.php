@@ -97,7 +97,7 @@ class CartController extends Controller
 			<div class='col-md-1 floatright'>Qty</div>
 			</div>";
         $data = Yii::app()->db->createCommand()
-    			->select('Id,Code,Name,Price')
+    			->select('Id,Code,Name,Price,Totalqty')
    				->from('product')
    				->where("CategoryId='".$_POST['Cart']['id']."'")
 			    ->queryAll();
@@ -106,9 +106,21 @@ class CartController extends Controller
 			$opt = array();
 			$opt['value'] = $value['Id'];
 			echo "<div class='row'>";
-			echo CHtml::checkBox('Cart[productId][]',false,array('value'=>$value['Id'].'-'.$value['Name'].'-'.$value['Price'])).' '.$value['Name']; 
-			echo '&nbsp; &nbsp;'.CHtml::numberField('qty['.$value["Id"].']', '1',['class' => 'form-control qtywidth','onchange'=>"this.value=this.value.replace(/[^\d]/,'')","min"=>"1"]);
-			echo "</div>";
+			$maxval=$value['Totalqty'];
+			if($maxval==-1){
+				$maxval='';
+			}
+			$textboxdiable=true;
+			$textboxalert='<div class="txt-qtyalert"><b> Quantity Not Avaible<b></div>';
+			
+			if($maxval >= 1 || $maxval==''){
+				$textboxalert="";
+				$textboxdiable=false;
+				
+			}
+			echo CHtml::checkBox('Cart[productId][]',false,array('value'=>$value['Id'].'-'.$value['Name'].'-'.$value['Price'],'disabled'=>$textboxdiable)).' '.$value['Name']; 
+			echo '&nbsp; &nbsp;'.CHtml::numberField('qty['.$value["Id"].']', '1',['class' => 'form-control qtywidth','onchange'=>"return qtyvalidation(this.value,".$value['Totalqty'].",".$value["Id"].")","min"=>"1","max"=>$maxval,'readonly'=>$textboxdiable]);
+			echo "</div>".$textboxalert;
 		}
 
 	}
@@ -117,7 +129,7 @@ class CartController extends Controller
 	public function actionDynamicProductSearch(){
 		
         $data = Yii::app()->db->createCommand()
-    			->select('Id,Code,Name,Price')
+    			->select('Id,Code,Name,Price,Totalqty')
    				->from('product')
    				->where("CategoryId='".$_POST['id']."' and Name like '%".$_POST['q']."%'")
 			    ->queryAll();
@@ -130,10 +142,23 @@ echo "<div class='row rowheader'>
 		foreach($data as $value) {
 			$opt = array();
 			$opt['value'] = $value['Id'];
+			$maxval=$value['Totalqty'];
+			if($maxval==-1){
+				$maxval='';
+			}
+			$textboxdiable=true;
+			$textboxalert='<div class="txt-qtyalert"><b> Quantity Not Avaible<b></div>';
+			
+			if($maxval >= 1 || $maxval==''){
+				$textboxalert="";
+				$textboxdiable=false;
+				
+			}
+
 			echo "<div class='row'>";
-			echo CHtml::checkBox('Cart[productId][]',false,array('value'=>$value['Id'].'-'.$value['Name'].'-'.$value['Price'])).' '.$value['Name'];
-				echo '&nbsp; &nbsp;'.CHtml::numberField('qty['.$value["Id"].']', '1',['class' => 'form-control qtywidth','onchange'=>'return checknum(this.value)',"min"=>"1"]);
-			echo "</div>";
+			echo CHtml::checkBox('Cart[productId][]',false,array('value'=>$value['Id'].'-'.$value['Name'].'-'.$value['Price'],'disabled'=>$textboxdiable)).' '.$value['Name'];
+				echo '&nbsp; &nbsp;'.CHtml::numberField('qty['.$value["Id"].']', '1',['class' => 'form-control qtywidth','onchange'=>"return qtyvalidation(this.value,".$value['Totalqty'].",".$value["Id"].")","min"=>"1","max"=>$maxval,'readonly'=>$textboxdiable])."";
+			echo "</div> ".$textboxalert;
 		}
 
 
@@ -187,12 +212,14 @@ echo "<div class='row rowheader'>
 		
 		if(isset($_POST['qty']))
 		{
-			
+	//			echo "222";
+// print_r($_REQUEST);
+// 	exit;
 			foreach($_POST['qty'] as $key => $value){
 				if($value > 0){
-				// $update = Yii::app()->db->createCommand()
-				// 		->update('tmphistory', array('number'=>$value),
-				// 		'id=:id',array(':id'=>$key));
+				$update = Yii::app()->db->createCommand()
+						->update('tmphistory', array('number'=>$value),
+						'id=:id',array(':id'=>$key));
 				}
 			}
 		}
@@ -257,6 +284,29 @@ echo "<div class='row rowheader'>
             $history->cartId = $cartId;
             $history->waiter = '';
             $history->save();
+
+            // Update Product Qty
+
+            $product=$this->loadProductModel($cart['productId']);
+            if($product->Totalqty=='-1'){
+				$Totalqty= '-1';
+			}else{
+				$Totalqty=$product->Totalqty - $cart['number'];
+						if($Totalqty < 0){
+								$Totalqty=0;
+						}
+
+			}
+
+			$update = Yii::app()->db->createCommand()
+		    ->update('product', 
+    		array(
+            'Totalqty'=>$Totalqty
+	        ),
+        	'id=:id',
+       		 array(':id'=>$cart['productId'])
+    		);            
+		   // Delete Tmp History Model
 
 		$this->loadTmpHistoryModel($cart['id'])->delete();
 
@@ -372,6 +422,13 @@ echo "<div class='row rowheader'>
 		return $model;
 	}
 
+	public function loadProductModel($id)
+	{
+		$model=Product::model()->findByPk($id);
+		if($model===null)
+			throw new CHttpException(404,'The requested page does not exist.');
+		return $model;
+	}
 	/**
 	 * Performs the AJAX validation.
 	 * @param Cart $model the model to be validated
