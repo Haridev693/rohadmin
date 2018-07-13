@@ -31,11 +31,11 @@ class Printsetting extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id, rest_name, address_1, address_2, sales_invoice, footer_1, footer_2, footer_3', 'required'),
+			array('id, rest_name, address_1, address_2, sales_invoice, footer_1, footer_2, footer_3,printer_ip', 'required'),
 			array('id', 'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, rest_name, address_1, address_2, sales_invoice, footer_1, footer_2, footer_3', 'safe', 'on'=>'search'),
+			array('id, rest_name, address_1, address_2, sales_invoice, footer_1, footer_2, footer_3, printer_ip', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -64,6 +64,8 @@ class Printsetting extends CActiveRecord
 			'footer_1' => 'Footer 1',
 			'footer_2' => 'Footer 2',
 			'footer_3' => 'Footer 3',
+			'printer_ip' => 'printer ip',
+			'app_bill' => 'app_bill',
 		);
 	}
 
@@ -93,6 +95,10 @@ class Printsetting extends CActiveRecord
 		$criteria->compare('footer_1',$this->footer_1,true);
 		$criteria->compare('footer_2',$this->footer_2,true);
 		$criteria->compare('footer_3',$this->footer_3,true);
+		$criteria->compare('printer_ip',$this->printer_ip,true);
+		$criteria->compare('app_bill',$this->app_bill);
+
+
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

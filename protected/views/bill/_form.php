@@ -64,7 +64,21 @@
 		<?php echo $form->error($model,'footer_3'); ?>
 
 	</div>
+	
+			<div class="row">
+		<?php echo $form->labelEx($model,'Generate Bill from app'); ?>
+		<?php echo $form->textField($model,'app_bill',array('maxlength'=>1)); ?>
+		<?php echo $form->error($model,'printer_ip'); ?>
 
+	</div>
+
+		<div class="row">
+		<?php echo $form->labelEx($model,'Wifi Printer IP Address'); ?>
+		<?php echo $form->textField($model,'printer_ip',array('maxlength'=>30)); ?>
+		<?php echo $form->error($model,'printer_ip'); ?>
+
+	</div>
+	
 <!-- 	<div class="row">
     </div>
  -->   

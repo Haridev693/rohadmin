@@ -43,6 +43,9 @@ class Bill extends CActiveRecord
 			array('footer_1', 'length', 'max'=>255),
 			array('footer_2', 'length', 'max'=>255),
 			array('footer_3', 'length', 'max'=>255),
+			array('printer_ip', 'length', 'max'=>30),
+			array('app_bill', 'numerical', 'integerOnly'=>true),
+
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, printsetting', 'safe', 'on'=>'search'),
@@ -76,6 +79,8 @@ class Bill extends CActiveRecord
 			'footer_1' => 'footer_1',
 			'footer_2' => 'footer_2',
 			'footer_3' => 'footer_3',
+			'printer_ip' => 'printer ip',
+			'app_bill' => 'app_bill',
 		);
 	}
 
@@ -105,6 +110,8 @@ class Bill extends CActiveRecord
 		$criteria->compare('footer_1',$this->footer_1,true);
 		$criteria->compare('footer_2',$this->footer_2,true);
 		$criteria->compare('footer_3',$this->footer_3,true);
+		$criteria->compare('printer_ip',$this->printer_ip,true);
+		$criteria->compare('app_bill',$this->app_bill);
 //		$criteria->compare('status',$this->status);
 //		$criteria->compare('time',$this->time,true);
 
