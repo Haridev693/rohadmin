@@ -33,8 +33,15 @@ class ShowCategoryAction extends CAction
             $a= intval($ope);
             $b= intval($sta);*/
             $path= Yii::app()->getBaseUrl(true);
+            if(is_null($item->ImageUrl))
+            {
+                $image= $path.'/images/category/';
+            }
+            else
+            {
             if(strlen($item->ImageUrl)>0)
             $image= $path.'/images/category/'.$item->ImageUrl;
+            }
             $data[]= array(
                 'id'=>$item->id,
                 'imageUrl'=>$image,
